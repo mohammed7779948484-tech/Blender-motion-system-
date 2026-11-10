@@ -1,0 +1,46 @@
+{
+ "shots": {
+  "shot-0000": {
+   "planHash": "1c1f719e88018987",
+   "blendSha": "bb8369edb6bf9900e3f1ac109214d908852590bb",
+   "libraries": [
+    "library/claude.blend",
+    "library/floating_island.blend",
+    "library/light_bridge.blend",
+    "library/planet.blend",
+    "library/rayan.blend",
+    "library/space_rocks.blend",
+    "library/starfield.blend"
+   ],
+   "builtAt": "2026-11-10T10:37:26.642Z"
+  },
+  "shot-0151": {
+   "planHash": "418128e0099d0428",
+   "blendSha": "c17cdc36a5bbe49c81fb2bf5ce68b32ded5e1007",
+   "libraries": [
+    "library/claude.blend",
+    "library/floating_island.blend",
+    "library/light_bridge.blend",
+    "library/planet.blend",
+    "library/rayan.blend",
+    "library/space_rocks.blend",
+    "library/starfield.blend"
+   ],
+   "builtAt": "2026-11-10T10:37:26.642Z"
+  },
+  "shot-0363": {
+   "planHash": "da74d8e81d9b95b9",
+   "blendSha": "44e2ec7dd9071405a9fbce4af67c41b551a4ffe0",
+   "libraries": [
+    "library/claude.blend",
+    "library/floating_island.blend",
+    "library/light_bridge.blend",
+    "library/planet.blend",
+    "library/rayan.blend",
+    "library/space_rocks.blend",
+    "library/starfield.blend"
+   ],
+   "builtAt": "2026-11-10T10:37:26.643Z"
+  }
+ }
+}

@@ -83,4 +83,6 @@ Decision key: **carry** = copied unchanged · **adapt** = copied and modified ·
 
 ## Capability checks on other episodes
 
-Filled in from runs in this session — see [COMPARISON.md](COMPARISON.md#capability-checks).
+`ctrl-z` (contact, locomotion), `one-take` (camera tracking) and `launch-promo` (video-local set) were run through
+`plan` + `scenes` and sample frames were rendered; results and images are in
+[COMPARISON.md](COMPARISON.md#capability-checks). Full renders of these episodes are pending.

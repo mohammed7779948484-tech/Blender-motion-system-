@@ -1,0 +1,104 @@
+{
+ "shots": {
+  "shot-0000": {
+   "planHash": "390fe9903d6a0c2d",
+   "blendSha": "eb346d1d60a705f944e0b88f05962c2366099cfc",
+   "libraries": [
+    "library/bookshelf.blend",
+    "library/claude.blend",
+    "library/desk.blend",
+    "library/desk_lamp.blend",
+    "library/keyboard.blend",
+    "library/monitor.blend",
+    "library/mug.blend",
+    "library/office_chair.blend",
+    "library/plant.blend",
+    "library/rayan.blend",
+    "library/rug.blend",
+    "library/shell-dev-office.blend",
+    "library/window.blend"
+   ],
+   "builtAt": "2026-11-10T10:06:17.867Z"
+  },
+  "shot-0056": {
+   "planHash": "10ada336b3a0d67d",
+   "blendSha": "67c6ad4fd186ec964a8c0c4b18ee93f5c74ecaaf",
+   "libraries": [
+    "library/bookshelf.blend",
+    "library/claude.blend",
+    "library/desk.blend",
+    "library/desk_lamp.blend",
+    "library/keyboard.blend",
+    "library/monitor.blend",
+    "library/mug.blend",
+    "library/office_chair.blend",
+    "library/plant.blend",
+    "library/rayan.blend",
+    "library/rug.blend",
+    "library/shell-dev-office.blend",
+    "library/window.blend"
+   ],
+   "builtAt": "2026-11-10T10:06:17.868Z"
+  },
+  "shot-0115": {
+   "planHash": "9bbee1efc06148a6",
+   "blendSha": "d0074ef80695016cf96775a859c3a54b8731ab2f",
+   "libraries": [
+    "library/bookshelf.blend",
+    "library/claude.blend",
+    "library/desk.blend",
+    "library/desk_lamp.blend",
+    "library/keyboard.blend",
+    "library/monitor.blend",
+    "library/mug.blend",
+    "library/office_chair.blend",
+    "library/plant.blend",
+    "library/rayan.blend",
+    "library/rug.blend",
+    "library/shell-dev-office.blend",
+    "library/window.blend"
+   ],
+   "builtAt": "2026-11-10T10:06:17.868Z"
+  },
+  "shot-0182": {
+   "planHash": "f9ba326ec6e4b085",
+   "blendSha": "b359d6716802cf66f529d7b1af664eda31010f09",
+   "libraries": [
+    "library/bookshelf.blend",
+    "library/claude.blend",
+    "library/desk.blend",
+    "library/desk_lamp.blend",
+    "library/keyboard.blend",
+    "library/monitor.blend",
+    "library/mug.blend",
+    "library/office_chair.blend",
+    "library/plant.blend",
+    "library/rayan.blend",
+    "library/rug.blend",
+    "library/shell-dev-office.blend",
+    "library/window.blend"
+   ],
+   "builtAt": "2026-11-10T10:19:25.025Z"
+  },
+  "shot-0222": {
+   "planHash": "7b95815a25f29f9f",
+   "blendSha": "099b92efae0186e9e318587daf872d1ce75cb663",
+   "libraries": [
+    "library/bookshelf.blend",
+    "library/claude.blend",
+    "library/desk.blend",
+    "library/desk_lamp.blend",
+    "library/keyboard.blend",
+    "library/monitor.blend",
+    "library/mug.blend",
+    "library/office_chair.blend",
+    "library/plant.blend",
+    "library/rayan.blend",
+    "library/rug.blend",
+    "library/shell-dev-office.blend",
+    "library/window.blend"
+   ],
+   "builtAt": "2026-11-10T10:19:25.026Z"
+  }
+ }
+}

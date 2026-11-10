@@ -1,7 +1,7 @@
 {
  "shots": {
   "shot-0000": {
-   "planHash": "d91645e4dc98d996",
+   "planHash": "6e72138848c881c6",
    "blendSha": "2c6b56f2ba61e2f601a8ddb512c5ce4741aa941a",
    "libraries": [
     "library/bookshelf.blend",
@@ -21,7 +21,7 @@
    "builtAt": "2026-11-10T02:05:47.225Z"
   },
   "shot-0068": {
-   "planHash": "213f8229b2e8c94c",
+   "planHash": "0dfe362643532786",
    "blendSha": "7bac126d0420204295e0755f673682acadaa7d35",
    "libraries": [
     "library/bookshelf.blend",
@@ -41,7 +41,7 @@
    "builtAt": "2026-11-10T02:05:47.225Z"
   },
   "shot-0228": {
-   "planHash": "9d120d3b915862ae",
+   "planHash": "74b3db38e3c5a317",
    "blendSha": "58abe38802c20aa84cc1d88a7eaf8464616cbed6",
    "libraries": [
     "library/bookshelf.blend",
@@ -61,7 +61,7 @@
    "builtAt": "2026-11-10T02:05:47.226Z"
   },
   "shot-0300": {
-   "planHash": "820b8a9829ea880e",
+   "planHash": "7b6198bbc3280960",
    "blendSha": "da35898e3da32af9319b440c9397c70c49824b97",
    "libraries": [
     "library/bookshelf.blend",
@@ -81,7 +81,7 @@
    "builtAt": "2026-11-10T02:05:47.226Z"
   },
   "shot-0400": {
-   "planHash": "6b950d6d1c0a703a",
+   "planHash": "dbb2b9266bafaaa5",
    "blendSha": "923ea9c8ce92e01925f776650b5ab5f619f4a9e2",
    "libraries": [
     "library/bookshelf.blend",
@@ -101,8 +101,8 @@
    "builtAt": "2026-11-10T02:05:47.226Z"
   },
   "shot-0459": {
-   "planHash": "3b81f5df62165c28",
-   "blendSha": "c7d7d7d278fa95318609971d5034d22786d07e5c",
+   "planHash": "a552513749c730d8",
+   "blendSha": "307faea8635e4ec35b9463e6aed6a2542a07fd31",
    "libraries": [
     "library/bookshelf.blend",
     "library/claude.blend",
@@ -118,10 +118,10 @@
     "library/shell-dev-office.blend",
     "library/window.blend"
    ],
-   "builtAt": "2026-11-10T02:05:47.227Z"
+   "builtAt": "2026-11-10T09:56:51.274Z"
   },
   "shot-0498": {
-   "planHash": "222352cf614ebe9a",
+   "planHash": "bb4af770f6be37e4",
    "blendSha": "dffa4883388bed483bb3f0313e62a362124aaf59",
    "libraries": [
     "library/bookshelf.blend",
@@ -141,7 +141,7 @@
    "builtAt": "2026-11-10T02:05:47.227Z"
   },
   "shot-0546": {
-   "planHash": "405aa3926a752dbb",
+   "planHash": "7344726add323f64",
    "blendSha": "919f3efe6ebd9892db497642a57149137d60dc33",
    "libraries": [
     "library/bookshelf.blend",
@@ -161,7 +161,7 @@
    "builtAt": "2026-11-10T02:05:47.227Z"
   },
   "shot-0573": {
-   "planHash": "f204eb9af6053ee0",
+   "planHash": "9a97dc5a753f89f3",
    "blendSha": "0572d33a200092e362ef0cb8a8ae81a83b6d3f57",
    "libraries": [
     "library/bookshelf.blend",
@@ -181,7 +181,7 @@
    "builtAt": "2026-11-10T02:05:47.227Z"
   },
   "shot-0650": {
-   "planHash": "86e5d8552827fe0e",
+   "planHash": "663a9f28e8d1966f",
    "blendSha": "8d6da13af00ff46a63d6ded71d8104512e7d301d",
    "libraries": [
     "library/bookshelf.blend",
@@ -201,7 +201,7 @@
    "builtAt": "2026-11-10T02:05:47.227Z"
   },
   "shot-0732": {
-   "planHash": "2e50f7bf83ac1390",
+   "planHash": "9f9626a2278ce72b",
    "blendSha": "1cf7f31f8d0af9a5f31c981a5b91ebe285afc98c",
    "libraries": [
     "library/bookshelf.blend",
@@ -221,7 +221,7 @@
    "builtAt": "2026-11-10T02:05:47.228Z"
   },
   "shot-0797": {
-   "planHash": "428d6d7c18e45171",
+   "planHash": "61be92f9503c633f",
    "blendSha": "506e640f270dc080bdcfb78bd89b5e69ace2cb88",
    "libraries": [
     "library/bookshelf.blend",

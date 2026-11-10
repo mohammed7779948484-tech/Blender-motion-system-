@@ -1,0 +1,216 @@
+{
+ "shots": {
+  "shot-0000": {
+   "planHash": "8c643a135457c46e",
+   "blendSha": "f435ed813f62f2dbb0687788cfcc5ca8d2aaafaf",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/scene-ctrl-z.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.957Z"
+  },
+  "shot-0029": {
+   "planHash": "64c210d6b8b1dd5e",
+   "blendSha": "1fad28bd6f0bf5487a3f5b841239f2daccaf892f",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/scene-ctrl-z.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.957Z"
+  },
+  "shot-0137": {
+   "planHash": "a00795df7533532a",
+   "blendSha": "e8a3cdd26d9d1b43f4448c89c04306c034033e6a",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.957Z"
+  },
+  "shot-0224": {
+   "planHash": "f7d46ff4d6bcaa3e",
+   "blendSha": "27e862e8e9cf6d8d63914385ea1c4e51ab68db42",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.958Z"
+  },
+  "shot-0261": {
+   "planHash": "aff00fb3f6938c4e",
+   "blendSha": "00aa5f1051d925a0b6cf059956506c63aba8433d",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.958Z"
+  },
+  "shot-0300": {
+   "planHash": "3fb74dfd3ff57d2e",
+   "blendSha": "b5f3a590adc16faa8f24a533a8455fd44d70b832",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.958Z"
+  },
+  "shot-0315": {
+   "planHash": "04891db131fcfc6a",
+   "blendSha": "176d1d2117c428a4bc087e803e1491ea4086263d",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.959Z"
+  },
+  "shot-0362": {
+   "planHash": "31929b3f198b3768",
+   "blendSha": "f57ceecef4e87d781baa04ef3a512cfcb0d3e077",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.959Z"
+  },
+  "shot-0398": {
+   "planHash": "ebfd6d81fb2f6250",
+   "blendSha": "9e684df8b38a6cc4d675bd2eacebc41b19615ceb",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.959Z"
+  },
+  "shot-0532": {
+   "planHash": "b0f22e985f14a0bd",
+   "blendSha": "f7bc909e5b851490701fcd08e36eab43f5580171",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.959Z"
+  },
+  "shot-0591": {
+   "planHash": "1a5dd76c459cab36",
+   "blendSha": "7da545705c99db808f5e9ff3a0da1fed7fd139e3",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.960Z"
+  },
+  "shot-0638": {
+   "planHash": "c3b1ce73a69e0eea",
+   "blendSha": "2ba0059c2bdb40a4fd54af5bef021886c7db6d04",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.960Z"
+  },
+  "shot-0680": {
+   "planHash": "1252aba928b5fa8c",
+   "blendSha": "fb777cd93ccbd6d6637d0a30fdd6822ae2b0470b",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.960Z"
+  },
+  "shot-0750": {
+   "planHash": "0d8b86023cc0774b",
+   "blendSha": "a11c9e008eb5055c7db8b31d0d46ccfe6cf88065",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.961Z"
+  },
+  "shot-0842": {
+   "planHash": "114b0e2b4fccad10",
+   "blendSha": "2700c9a6887d9bb1462b07baaaeda62f2426ab6a",
+   "libraries": [
+    "library/claude.blend",
+    "library/dust_motes.blend",
+    "library/giant_keyboard.blend",
+    "library/giant_screen.blend",
+    "library/rayan.blend",
+    "library/rubber_duck.blend",
+    "library/shell-micro-keyboard.blend"
+   ],
+   "builtAt": "2026-11-10T10:46:55.961Z"
+  }
+ }
+}

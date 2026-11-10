@@ -50,5 +50,5 @@ library `.blend` files are the editable copy.
 | 5 | Composite | MP4 with picture, burned captions, mixed audio; sidecar `.srt`/`.vtt`; ffprobe + loudness checks | done |
 | 6 | Edit paths | recipe edit by command, scene edit by hand/headless, asset edit in the library — each verified in a new build | done |
 | 7 | Second recipe | a new episode from the same shared assets built with the same commands | done — `videos/standup-update/` |
-| 8 | Capability checks | contact (`ctrl-z`), camera tracking (`one-take`), custom set (`launch-promo`) pass through the probe | see [MIGRATION.md](MIGRATION.md) |
+| 8 | Capability checks | contact (`ctrl-z`), camera tracking (`one-take`), custom set (`launch-promo`) pass through the probe | done for plan + scenes + sample frames; full renders pending — [COMPARISON.md](COMPARISON.md#capability-checks) |
 | 9 | Comparison + docs | same recipe, hardware and output settings; README, notes, matrix | done |

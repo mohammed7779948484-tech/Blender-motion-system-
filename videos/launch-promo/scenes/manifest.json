@@ -1,0 +1,132 @@
+{
+ "shots": {
+  "shot-0000": {
+   "planHash": "6831be18d4460e81",
+   "blendSha": "44604aa39835a66eefbc1c72bfc182d4867c4aff",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.819Z"
+  },
+  "shot-0095": {
+   "planHash": "21d465060944b4e7",
+   "blendSha": "2d038c9e94a53b1b777290687963b0977420067a",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.820Z"
+  },
+  "shot-0226": {
+   "planHash": "93c1f9910e98e6e9",
+   "blendSha": "cb325b7f0ade66ebf2640517845018c4a68b4fab",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.820Z"
+  },
+  "shot-0395": {
+   "planHash": "49be1180378e80ad",
+   "blendSha": "67e2a69aadbe88a99c8f5d66b993e590f0e040d4",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.820Z"
+  },
+  "shot-0478": {
+   "planHash": "b76b2a4c5fb59be4",
+   "blendSha": "0110eb10424272324d07e61ff2ba54410a8e4d8d",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.820Z"
+  },
+  "shot-0587": {
+   "planHash": "380483dc3aebebf9",
+   "blendSha": "5c0afd5c82fce4dc868350ca75398721d3e84a99",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.820Z"
+  },
+  "shot-0706": {
+   "planHash": "b01e079bff5f2c0d",
+   "blendSha": "45a528e29f46e6feb9c0d35acb515e176f09c6fb",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.820Z"
+  },
+  "shot-0757": {
+   "planHash": "0e85fcb633ed0fe8",
+   "blendSha": "a6c980e992e4dc585eadf993a63a70c8a8ec0a96",
+   "libraries": [
+    "library/claude.blend",
+    "library/cyclorama.blend",
+    "library/holo_screen.blend",
+    "library/neon_bar.blend",
+    "library/podium.blend",
+    "library/rayan.blend",
+    "library/scene-launch-promo.blend",
+    "library/shell-launch-stage.blend",
+    "library/stage_floor.blend"
+   ],
+   "builtAt": "2026-11-10T10:55:26.821Z"
+  }
+ }
+}

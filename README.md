@@ -106,6 +106,7 @@ Titles, captions and per-video overlays are React components (`videos/<slug>/ind
   lighting differs slightly from the Blender picture).
 - `stills <slug>` / `preview <slug> --from 2 --to 5` — legacy-renderer contact sheets and short previews.
 - `review <slug>` — frame sheet from the final MP4, loudness, clipped samples, per-sound level against dialogue.
+- Finished videos from this session are in `deliverables/` (`out/` is not committed).
 - `factory/qa.sh out/<slug>.mp4` — ffprobe summary, loudness, black-frame and silence detection.
 
 ## Layout
@@ -140,6 +141,8 @@ catalog/                        machine-readable asset and schema catalog       
 ## Licences
 
 Code carried over from `Remtion_System` is private/unlicensed (see `THIRD_PARTY_NOTICES.md` for dependencies and
-audio). Remotion requires a company licence above three people. Sound effects in `public/sfx/` are CC0. Committed
-voice clips are Windows system voices (`it-works-on-my-machine`) and eSpeak NG output (`standup-update`); no
-ElevenLabs audio and no remotely hosted meme sounds are used by the videos in this repository.
+audio). Remotion requires a company licence above three people. Sound effects in `public/sfx/` are CC0. The two deliverables use only Windows system voices
+(`it-works-on-my-machine`) and eSpeak NG output (`standup-update`) plus CC0 effects. The other carried-over
+episodes are kept as test material and are **not cleared for publication**: `ctrl-z`, `ctrl-z-remaster` and
+`co-authored-by` contain ElevenLabs free-tier audio (non-commercial, credit required) and `launch-promo` references
+remotely hosted meme sounds with unknown rights.

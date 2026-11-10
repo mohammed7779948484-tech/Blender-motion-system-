@@ -1,0 +1,23 @@
+01-plan-deterministic	461.7	0	npm run -s factory -- plan it-works-on-my-machine
+02-scenes-adopt	0.6	0	npm run -s factory -- scenes it-works-on-my-machine --adopt
+03-status	0.7	0	npm run -s factory -- status it-works-on-my-machine
+04-build-nochange	81.3	0	npm run -s factory -- build it-works-on-my-machine
+05-E4-scene-edit	1.6	0	npm run -s factory -- scene-edit it-works-on-my-machine shot-0546 --py bpy.data.objects['camera'].data.shift_x = 0.06
+06-E4-build	294.6	0	npm run -s factory -- build it-works-on-my-machine
+07-E1-compose	79.3	0	npm run -s factory -- compose it-works-on-my-machine
+08-E2-validate	1.3	0	npm run -s factory -- validate it-works-on-my-machine
+09-E2-build	838.7	0	npm run -s factory -- build it-works-on-my-machine
+10-status	0.8	0	npm run -s factory -- status it-works-on-my-machine
+20-standup-build-draft	782.0	0	npm run -s factory -- build standup-update --profile draft
+21-E3-edit-camera	1.6	0	npm run -s factory -- edit standup-update camera --at l3.word:5 --shot close --subject rayan --move push-in --amount 0.15
+22-E3-edit-action	1.6	0	npm run -s factory -- edit standup-update action --at l3.word:5 --actor rayan --gesture wave
+23-E3-build-draft	391.8	0	npm run -s factory -- build standup-update --profile draft
+24-E5-library-edit	0.5	0	/opt/blender/blender-5.2.3-linux-x64/blender -b library/claude.blend --python /home/user/work/libedit.py
+25-E5-status-standup	0.8	0	npm run -s factory -- status standup-update --profile draft
+26-E5-status-baseline	0.7	0	npm run -s factory -- status it-works-on-my-machine
+27-E5-build-draft	644.9	0	npm run -s factory -- build standup-update --profile draft
+28-E5-reverted-status-baseline	0.8	0	npm run -s factory -- status it-works-on-my-machine
+29-E5-reverted-build-draft	22.9	0	npm run -s factory -- build standup-update --profile draft
+30-cap-one-take-scenes	164.9	0	npm run -s factory -- scenes one-take
+30-cap-ctrl-z-scenes	563.4	0	npm run -s factory -- scenes ctrl-z
+30-cap-launch-promo-scenes	486.3	0	npm run -s factory -- scenes launch-promo

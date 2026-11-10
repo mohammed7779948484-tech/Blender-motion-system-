@@ -141,13 +141,45 @@ const profileOf = (name: string): Profile => {
   return all[name] ?? fail(`unknown render profile "${name}" (factory/profiles.json: ${Object.keys(all).join(", ")})`);
 };
 
-const renderKey = (slug: string, s: ShotInfo, m: Manifest, profile: Profile) => {
-  const blend = blendOf(slug, s.name);
+/** The pieces of a render key that do not depend on how library content is identified. */
+const keyParts = (slug: string, s: ShotInfo, m: Manifest) => {
+  const blend = shaFile(blendOf(slug, s.name));
   const libs = (m.shots[s.name]?.libraries ?? []).map((l) => `${l}:${fs.existsSync(path.join(ROOT, l)) ? shaFile(path.join(ROOT, l)) : "missing"}`);
   // Animated screen textures live outside the .blend (image sequences in the plan).
   const planned = JSON.parse(fs.readFileSync(path.join(ROOT, s.file), "utf8")) as { materials: Record<string, { map?: unknown; emissiveMap?: unknown }> };
   const tex = sha(JSON.stringify(Object.values(planned.materials).map((x) => [x.map, x.emissiveMap])));
-  return sha([RENDER_VERSION, shaFile(blend), ...libs, tex, JSON.stringify(profile), s.start, s.end].join("|")).slice(0, 20);
+  return { blend, libs, tex };
+};
+
+/**
+ * Fingerprint of the library datablocks the shot really uses (factory/blender/fingerprint.py). Memoised by the
+ * bytes of the scene and of its library files, so Blender only starts when one of them changed.
+ */
+const libraryFingerprint = (slug: string, s: ShotInfo, blend: string, libs: string[]): string => {
+  const memoFile = path.join(ROOT, "out", slug, "cache", "fingerprints.json");
+  const memo: Record<string, string> = fs.existsSync(memoFile) ? JSON.parse(fs.readFileSync(memoFile, "utf8")) : {};
+  const id = sha([blend, ...libs].join("|"));
+  if (!memo[id]) {
+    const out = path.join(ROOT, "out", slug, "cache", `fingerprint-${s.name}.json`);
+    fs.mkdirSync(path.dirname(out), { recursive: true });
+    const r = blender(["-b", blendOf(slug, s.name), "--python", path.join(ROOT, "factory", "blender", "fingerprint.py"), "--", out], path.join(ROOT, "out", slug, "logs", "fingerprint.log"));
+    if (!r.ok || !fs.existsSync(out)) fail(`could not fingerprint the library content of ${s.name} — see out/${slug}/logs/fingerprint.log`);
+    memo[id] = (JSON.parse(fs.readFileSync(out, "utf8")) as { fingerprint: string }).fingerprint;
+    fs.rmSync(out);
+    fs.writeFileSync(memoFile, JSON.stringify(memo, null, 1));
+  }
+  return memo[id];
+};
+
+const renderKey = (slug: string, s: ShotInfo, m: Manifest, profile: Profile) => {
+  const { blend, libs, tex } = keyParts(slug, s, m);
+  const key = sha([RENDER_VERSION + 1, blend, libraryFingerprint(slug, s, blend, libs), tex, JSON.stringify(profile), s.start, s.end].join("|")).slice(0, 20);
+  // Renders made under the first key scheme (whole library files hashed) are still valid when that key matches:
+  // it is strictly stricter. Adopt them under the new key instead of rendering again.
+  const legacy = sha([RENDER_VERSION, blend, ...libs, tex, JSON.stringify(profile), s.start, s.end].join("|")).slice(0, 20);
+  const dir = path.join(ROOT, "out", slug, "cache");
+  if (!fs.existsSync(path.join(dir, key)) && fs.existsSync(path.join(dir, legacy, "done.json"))) fs.renameSync(path.join(dir, legacy), path.join(dir, key));
+  return key;
 };
 
 const cacheDir = (slug: string, key: string) => path.join(ROOT, "out", slug, "cache", key);

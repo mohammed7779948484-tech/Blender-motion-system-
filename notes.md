@@ -29,8 +29,8 @@ A linked mesh cannot be modified, and without a slot an object cannot carry its 
 ### 9. A hand-edited scene must be detected by content, not by timestamp
 The manifest stores the sha1 of each `.blend` as generated; any other sha1 means "edited" and the build keeps the file. Git checkouts and copies change mtimes, hashes do not. → [scripts/cli/factory.ts](scripts/cli/factory.ts) `sceneState`
 
-### 10. The render cache key must include the linked library files
-Otherwise an asset edit in `library/*.blend` would silently reuse stale frames. → `renderKey` in factory.ts, [docs/COMPARISON.md](docs/COMPARISON.md)
+### 10. Key the render cache on the library datablocks a shot uses, not on the library files
+Hashing whole `library/*.blend` files looked safe, but building two other videos added their variants to `rayan.blend` and silently invalidated every cached shot of the first video (a 107-minute re-render). → `libraryFingerprint` in [scripts/cli/factory.ts](scripts/cli/factory.ts), [factory/blender/fingerprint.py](factory/blender/fingerprint.py), [docs/COMPARISON.md](docs/COMPARISON.md)
 
 ### 11. Name shot files by first frame, not by index
 Inserting a cut then leaves every other shot's file name, hand edits and cached render untouched. → `buildPlan`
@@ -52,3 +52,12 @@ The bundler copies `public/` on every render; a gigabyte of PNG frames there wou
 
 ### 17. Meme sounds and free-tier ElevenLabs clips block commercial use
 The old episodes relied on both; the deliverables here use CC0 effects and offline voices only. → `THIRD_PARTY_NOTICES.md`, audit §4
+
+### 18. Scene plans must be byte-stable across runs
+three.js uuids are random per run, so every re-sample used to look like a change to every shot; ids assigned by order of first appearance made "1 built, 11 kept" possible. → `buildPlan` in [scripts/factory/plan.ts](scripts/factory/plan.ts)
+
+### 19. Long renders must be resumable
+Background jobs here are stopped after two hours; because frames are written with `use_overwrite = False` into the cache folder, re-running `shots` continued at the next missing frame. → [factory/blender/render.py](factory/blender/render.py)
+
+### 20. Overlay-only edits only need `compose`
+`build` re-samples the plan whenever any file in the video folder changes (≈0.5 s per frame); for a title or caption change run `compose` and get the new MP4 in about 80 s. → [docs/COMPARISON.md](docs/COMPARISON.md) E-1

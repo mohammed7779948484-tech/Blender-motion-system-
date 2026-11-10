@@ -1,0 +1,16 @@
+01-npm-ci	55.468797017	0	npm ci
+02-npm-test	8.619580865	0	npm test
+03-typecheck	6.506094446	0	npm run typecheck
+03b-lint	4.018339969	1	npm run lint
+04-list	2.331563792	0	npm run cli -- list
+05-list-videos	1.096182160	0	npm run cli -- list videos
+06-validate	2.056077208	0	npm run cli -- validate it-works-on-my-machine
+07-inspect	2.045285570	0	npm run cli -- inspect it-works-on-my-machine
+08-explain	2.857045343	0	npm run cli -- explain it-works-on-my-machine --t 8 --actor rayan
+09-stills	83.751181569	0	npm run cli -- stills it-works-on-my-machine
+10-stills-verify	43.715566079	0	npm run cli -- stills it-works-on-my-machine --frames 148,559 --verify
+11b-render-initial	1690.490015108	1	load=0.00 other=[]	npm run cli -- render it-works-on-my-machine
+11c-render-initial-alone	2278.236429907	0	load=1.81 other=[]	npm run cli -- render it-works-on-my-machine
+20-old-still-one	9.976244733	0	load=3.55 other=[]	npm run cli -- stills it-works-on-my-machine --frames 478
+21-old-preview-30f-a	116.847186621	0	load=3.40 other=[]	npx remotion render it-works-on-my-machine out/p30a.mp4 --frames=459-497 --log=error
+22-old-preview-30f-b	116.915423682	0	load=3.29 other=[]	npx remotion render it-works-on-my-machine out/p30b.mp4 --frames=459-497 --log=error
