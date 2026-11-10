@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:02.400 --> 00:00:07.200
+<v Rayan>Okay. Final deploy. What could possibly go wrong?
+
+00:00:07.700 --> 00:00:09.520
+<v Claude>Did you run the tests?
+
+00:00:09.970 --> 00:00:12.667
+<v Rayan>Tests are for people who doubt themselves.
+
+00:00:13.367 --> 00:00:14.682
+<v Claude>I doubt you.
+
+00:00:19.082 --> 00:00:20.952
+<v Rayan>It works on my machine!
+
+00:00:21.752 --> 00:00:23.887
+<v Claude>Want me to write the tests now?
+
+00:00:24.987 --> 00:00:26.197
+<v Rayan>Please.

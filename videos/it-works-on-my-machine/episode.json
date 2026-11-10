@@ -99,9 +99,9 @@
   ],
   "sfx": [
     { "at": "l4.end+1.95", "sound": "mouse-click", "volume": 0.8 },
-    { "at": "l4.end+3.5", "sound": "windows-xp-error", "volume": 0.7 },
-    { "at": "l4.end+3.55", "sound": "vine-boom", "volume": 0.6 },
-    { "at": "l7.end+0.5", "sound": "ding", "volume": 0.6 }
+    { "at": "l4.end+3.5", "sound": "error", "volume": 0.7 },
+    { "at": "l4.end+3.55", "sound": "impact-heavy", "volume": 0.6 },
+    { "at": "l7.end+0.5", "sound": "confirm", "volume": 0.6 }
   ],
   "events": [{ "at": "l7.end+0.6", "name": "title", "duration": 3.2 }],
   "captions": { "style": "subtitle" },

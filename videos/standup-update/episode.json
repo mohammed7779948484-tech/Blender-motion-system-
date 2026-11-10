@@ -1,0 +1,35 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "standup-update",
+  "title": "Standup Update",
+  "engine": 2,
+  "profile": "standard",
+  "format": { "preset": "landscape" },
+  "seed": "standup",
+  "set": { "environment": "dev-office", "params": { "monitor-main": { "screen": { "preset": "terminal" } } } },
+  "mood": "day-office",
+  "cast": {
+    "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_typing" },
+    "claude": { "actor": "claude", "at": "desk-mascot", "scale": 1.6 }
+  },
+  "dialogue": [
+    { "id": "l1", "speaker": "claude", "text": "Standup time. Any blockers today?", "at": 0.8 },
+    { "id": "l2", "speaker": "rayan", "text": "Just one. The tests.", "gap": 0.4 },
+    { "id": "l3", "speaker": "claude", "text": "Good news: they all passed.", "gap": 0.5 }
+  ],
+  "actions": [
+    { "at": 0.2, "actor": "claude", "look": "rayan", "pose": "asking_question" },
+    { "at": "l1.word:3", "actor": "rayan", "look": "claude", "pose": "sit_idle" },
+    { "at": "l2.start", "actor": "rayan", "pose": "sit_explaining", "emotion": "tired" },
+    { "at": "l3.start", "actor": "claude", "pose": "proud_puff", "emotion": "happy" },
+    { "at": "l3.end", "actor": "rayan", "emotion": "happy" }
+  ],
+  "camera": [
+    { "at": 0, "shot": "establishing", "move": { "type": "push-in", "amount": 0.12 } },
+    { "at": "l1.word:3", "shot": "close", "subject": "claude" },
+    { "at": "l2.start-0.1", "shot": "medium", "subject": "rayan" },
+    { "at": "l3.start-0.1", "shot": "close", "subject": "claude" }
+  ],
+  "captions": { "style": "subtitle" },
+  "end": "l3.end+1.6"
+}

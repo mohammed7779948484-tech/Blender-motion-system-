@@ -91,9 +91,12 @@ const sceneState = (slug: string, s: ShotInfo, m: Manifest): SceneState => {
   return edited ? (stale ? "edited-stale" : "edited") : stale ? "stale" : "current";
 };
 
-const ensureScenes = (slug: string, plan: StoredPlan, opts: { force?: boolean; only?: string } = {}) => {
+const ensureScenes = (slug: string, plan: StoredPlan, opts: { force?: boolean; only?: string; adopt?: boolean } = {}) => {
   const t0 = now();
   const m = readManifest(slug);
+  // --adopt: declare the existing scene files to be the build of the current plan (after a change to the plan
+  // format that does not change scene content). Hand-edited scenes stay marked as edited.
+  if (opts.adopt) for (const s of plan.shots) if (m.shots[s.name] && fs.existsSync(blendOf(slug, s.name))) m.shots[s.name].planHash = s.hash;
   const states = plan.shots.map((s) => ({ s, state: sceneState(slug, s, m) }));
   const todo = states.filter(({ s, state }) => (opts.only && s.name !== opts.only ? false : opts.force ? true : state === "missing" || state === "stale"));
   // Scenes of shots that no longer exist: remove untouched ones, keep hand-edited ones aside.
@@ -242,7 +245,7 @@ export const scenes = async () => {
   const slug = slugArg("scenes <slug> [--force] [--only shot-0148]");
   const { resolved } = await resolve(slug);
   const p = await ensurePlan(slug, resolved);
-  const s = ensureScenes(slug, p.plan, { force: has("force"), only: flag("only") });
+  const s = ensureScenes(slug, p.plan, { force: has("force"), only: flag("only"), adopt: has("adopt") });
   console.log(`✔ scenes (${s.built.length} built, ${s.seconds} s)`);
   printScenes(slug, s);
 };

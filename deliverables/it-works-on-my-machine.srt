@@ -1,0 +1,27 @@
+1
+00:00:02,400 --> 00:00:07,200
+Rayan: Okay. Final deploy. What could possibly go wrong?
+
+2
+00:00:07,700 --> 00:00:09,520
+Claude: Did you run the tests?
+
+3
+00:00:09,970 --> 00:00:12,667
+Rayan: Tests are for people who doubt themselves.
+
+4
+00:00:13,367 --> 00:00:14,682
+Claude: I doubt you.
+
+5
+00:00:19,082 --> 00:00:20,952
+Rayan: It works on my machine!
+
+6
+00:00:21,752 --> 00:00:23,887
+Claude: Want me to write the tests now?
+
+7
+00:00:24,987 --> 00:00:26,197
+Rayan: Please.

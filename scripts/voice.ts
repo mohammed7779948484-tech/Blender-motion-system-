@@ -294,8 +294,13 @@ export const espeakClip = (job: LineJob, tmpDir: string): Clip => {
   let last = 0;
   const starts = spoken.map((w, i) => {
     if (i > 0) {
+      // Speech length of the prefix: the file minus its trailing silence, minus the phrase-final lengthening
+      // a prefix has and the same words inside the sentence do not (≈60 ms, measured on the default voices).
       const prefix = readWav(say(spoken.slice(0, i).join(" ").replace(/[.,!?;:]+$/, ""), `p${i}`));
-      last = Math.min(duration - 0.05, Math.max(last + 0.06, prefix.samples.length / prefix.sampleRate));
+      let end = prefix.samples.length - 1;
+      while (end > 0 && Math.abs(prefix.samples[end]) < 0.02) end--;
+      const pause = /[.!?:;,]$/.test(spoken[i - 1]) ? 0.12 : 0;
+      last = Math.min(duration - 0.05, Math.max(last + 0.06, end / prefix.sampleRate - 0.06 + pause));
     }
     return { text: w, start: last };
   });

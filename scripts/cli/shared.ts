@@ -14,7 +14,7 @@ export const flag = (name: string) => {
 };
 export const has = (name: string) => args.includes(`--${name}`);
 /** Flags that take no value (everything else consumes the next token). */
-export const BOOLEAN_FLAGS = ["--force", "--verify", "--draft", "--guides", "--check", "--master", "--json", "--edges", "--camera", "--report", "--no-stt", "--analyze"];
+export const BOOLEAN_FLAGS = ["--force", "--verify", "--draft", "--guides", "--check", "--master", "--json", "--edges", "--camera", "--report", "--no-stt", "--analyze", "--adopt"];
 export const positional = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1].startsWith("--") && !BOOLEAN_FLAGS.includes(args[i - 1])));
 
 export const fail = (msg: string): never => {

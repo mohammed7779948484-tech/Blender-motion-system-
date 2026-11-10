@@ -53,7 +53,7 @@ const probe = async (root: string, slug: string, frames: number, range?: [number
   return got;
 };
 
-type Track = { first: number; last: number; rec: ProbeObject; P: number[][]; Q: number[][]; S: number[][]; V: number[]; L?: { color: number[][]; intensity: number[] }; mat: (string | undefined)[] };
+type Track = { key: string; first: number; last: number; rec: ProbeObject; P: number[][]; Q: number[][]; S: number[][]; V: number[]; L?: { color: number[][]; intensity: number[] }; mat: (string | undefined)[] };
 
 const constant = (rows: number[][]) => rows.every((r) => r.every((v, i) => Math.abs(v - rows[0][i]) < 1e-5));
 
@@ -79,6 +79,20 @@ export const buildPlan = async (root: string, slug: string, r: ResolvedEpisode, 
   const frames = await probe(root, slug, r.durationInFrames, opts.range);
   const probeSeconds = (Date.now() - t0) / 1000;
   const order = [...frames.keys()].sort((a, b) => a - b);
+  // three.js uuids are random per run. Rename objects and materials by order of first appearance, so the same
+  // recipe always produces byte-identical shot plans (their hash decides what is rebuilt and re-rendered).
+  const oid = new Map<string, string>();
+  const mid = new Map<string, string>();
+  const stable = (m: Map<string, string>, id: string, prefix: string) => m.get(id) ?? (m.set(id, `${prefix}${m.size}`), m.get(id)!);
+  for (const f of order) {
+    const fr = frames.get(f)!;
+    for (const o of fr.objects) {
+      o.id = stable(oid, o.id, "o");
+      if (o.parent) o.parent = stable(oid, o.parent, "o");
+      if (o.mat) o.mat = stable(mid, o.mat, "m");
+    }
+    fr.materials = Object.fromEntries(Object.entries(fr.materials).map(([k, v]) => [stable(mid, k, "m"), v]));
+  }
   const F0 = order[0];
   const N = order.length;
 
@@ -113,9 +127,9 @@ export const buildPlan = async (root: string, slug: string, r: ResolvedEpisode, 
     const fr = frames.get(f)!;
     mats.set(f, fr.materials);
     for (const o of fr.objects) {
-      const key = `${o.id}|${o.geom ?? ""}`;
+      const key = `${o.id}|${o.geom ? geomKey.get(o.geom) : ""}`;
       let t = tracks.get(key);
-      if (!t) tracks.set(key, (t = { first: f, last: f, rec: o, P: [], Q: [], S: [], V: [], mat: [], ...(o.light ? { L: { color: [], intensity: [] } } : {}) }));
+      if (!t) tracks.set(key, (t = { key, first: f, last: f, rec: o, P: [], Q: [], S: [], V: [], mat: [], ...(o.light ? { L: { color: [], intensity: [] } } : {}) }));
       // Absent frames in between (unmounted, then mounted again with the same uuid): hold, invisible.
       while (t.first + t.P.length < f) {
         t.P.push(t.P[t.P.length - 1]);
@@ -195,7 +209,7 @@ export const buildPlan = async (root: string, slug: string, r: ResolvedEpisode, 
       live.add(key);
       let p = t.rec.parent;
       while (p) {
-        for (const pt of trackOfObj.get(p) ?? []) live.add(`${pt.rec.id}|${pt.rec.geom ?? ""}`);
+        for (const pt of trackOfObj.get(p) ?? []) live.add(pt.key);
         p = byId.get(p)?.parent ?? null;
       }
     }
