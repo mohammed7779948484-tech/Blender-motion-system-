@@ -1,0 +1,19 @@
+{
+ "resolved": "5aabf2dca5846b7e",
+ "sweep": {
+  "frames": 275,
+  "total": "9c06dc9cb0ed9d02",
+  "seconds": [
+   "9c84bfed25cdec8b",
+   "ddd8b9eb7cc03ff9",
+   "c1c6d21f9f646c0d",
+   "3c4f87cbf9e96dad",
+   "7f87e58f9d992681",
+   "1d29d6eae0c32a7c",
+   "eab3a0767c3008b4",
+   "f62db0966f9d0414",
+   "ec18241f6b2cf851",
+   "efe8c3c878a05e22"
+  ]
+ }
+}

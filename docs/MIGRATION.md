@@ -76,7 +76,7 @@ Decision key: **carry** = copied unchanged · **adapt** = copied and modified ·
 
 | Capability | Decision | Verify |
 |---|---|---|
-| 23 engine test files (221 tests) | carry | ✔ `npm test` → 225 passed (221 + 4 new) |
+| 23 engine test files (221 tests) | carry | ✔ `npm test` → 229 passed |
 | Factory tests | build (`tests/factory.test.ts`) | ✔ |
 | `make-episode` skill, legacy AGENTS/PROGRESS/ENGINE docs | carry as reference under `docs/legacy/`; new `AGENTS.md` | — |
 | Lint | carry (the starting commit already fails `npm run lint` with 2 errors) | ✔ same 2 errors before and after |
