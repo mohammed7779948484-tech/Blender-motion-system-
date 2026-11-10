@@ -125,6 +125,7 @@ catalog/                        machine-readable asset and schema catalog       
 | Environment | What was run | Result |
 |---|---|---|
 | Linux x86-64 container (Ubuntu 24.04, 4 vCPU, 15 GB, **no GPU**), Node 22.23, Blender 5.2.3 LTS, ffmpeg 6.1, Mesa 25.2 llvmpipe | tests, both videos end to end, all edit paths | works; numbers in [docs/COMPARISON.md](docs/COMPARISON.md) |
+| Same container, fresh `git clone` of this repository | `npm ci`, `npm test` (229 passed), `build standup-update --profile blocking` | works: committed scenes recognised as up to date, MP4 + sidecars in 254 s |
 | Workstation with a GPU; macOS; Windows | not available in this session | **not verified** — expected to work (same Blender and Node versions); EEVEE render times should drop by an order of magnitude |
 | Blender GUI | not available (headless container) | **not verified** interactively; scenes were opened, modified and saved with Blender's Python in background mode |
 
