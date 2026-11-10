@@ -2,7 +2,7 @@
 //   list [actors|props|environments|shots|moves|moods|screens|fx|sfx|videos|direction]
 //   show <actor|prop|environment|mood|screen|fx|sfx> <id>
 //   new <slug> [--preset portrait|landscape|square] [--env <environment>|custom] [--title "..."]  (writes BRIEF.md)
-//   voice <slug> [--provider elevenlabs|system|fixture] [--force] [--takes l3=3] [--max-credits N] [--no-stt]
+//   voice <slug> [--provider elevenlabs|system|espeak|fixture] [--force] [--takes l3=3] [--max-credits N] [--no-stt]
 //   voice <slug> --show l3 | --audition l3 | --report   |   voice --check (free: plan, models, voices)
 //   validate <slug>   (direction, audio readiness, beat sheet and every inspect finding)
 //   inspect <slug> [--json]   (findings: time, object, source, intent; exits 1 on errors)
@@ -12,6 +12,14 @@
 //   render <slug> [--out out/<slug>.mp4] [--draft] [--master (loudness -14 LUFS)] [--timeout ms]
 //   review <slug>   (after render: frame sheet of every shot/accent + loudness and mix balance)
 //   catalog
+// Factory (Blender scenes; see README):
+//   build <slug> [--profile final|draft|blocking] [--force]   recipe → plan → scenes → shots → out/<slug>.mp4 (+ .srt/.vtt)
+//   plan | scenes | shots | compose <slug>                     the individual stages (each reuses what did not change)
+//   status <slug>                                              per shot: scene state (current/stale/edited) and render cache
+//   open <slug> <shot>  |  scene-edit <slug> <shot> --py "..." | --script f.py     edit a shot scene (GUI / headless)
+//   edit <slug> camera --at l2.word:3 --shot close --subject rayan [--move push-in --amount 0.2]
+//   edit <slug> action --at l2.word:3 --actor rayan --gesture wave   |  edit <slug> line l2 --text "..."  |  edit <slug> set <path> --value <json>
+//   library                                                    shared asset .blend files and the videos that link them
 import fs from "node:fs";
 import path from "node:path";
 import { writeCatalog } from "./catalog";
@@ -21,6 +29,7 @@ import { preview, render, review, stills } from "./cli/media";
 import { newVideo } from "./cli/scaffold";
 import { fail, positional, ROOT } from "./cli/shared";
 import { voice } from "./cli/voices";
+import { factoryCommands } from "./cli/factory";
 
 if (fs.existsSync(path.join(ROOT, ".env"))) process.loadEnvFile(path.join(ROOT, ".env"));
 
@@ -36,6 +45,7 @@ const commands: Record<string, () => unknown> = {
   preview,
   render,
   review,
+  ...factoryCommands,
   catalog: () => console.log(`✔ catalog/: ${writeCatalog().length} files`),
 };
 

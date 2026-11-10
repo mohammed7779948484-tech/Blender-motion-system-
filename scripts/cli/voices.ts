@@ -17,7 +17,7 @@ const voiceCheck = async () => {
   if (a.tier === "free") console.log("⚠ free plan: audio is non-commercial (also after upgrading) and published titles must credit elevenlabs.io");
 };
 
-const USAGE = "usage: voice <slug> [--provider elevenlabs|system|fixture] [--force] [--takes l3=3,l5=2] [--max-credits N] [--no-stt] [--analyze]  |  voice <slug> --show l3[#1] | --audition l3 | --report  |  voice --check";
+const USAGE = "usage: voice <slug> [--provider elevenlabs|system|espeak|fixture] [--force] [--takes l3=3,l5=2] [--max-credits N] [--no-stt] [--analyze]  |  voice <slug> --show l3[#1] | --audition l3 | --report  |  voice --check";
 
 /** "l3=3,l5=2" → { l3: 3, l5: 2 } (total takes per line, take 0 included). */
 const parseTakes = (v: string | undefined) => {

@@ -1,0 +1,5 @@
+{
+  "final": { "engine": "BLENDER_EEVEE", "percent": 100, "samples": 4, "dof": true, "shadows": true },
+  "draft": { "engine": "BLENDER_EEVEE", "percent": 50, "samples": 2, "dof": false, "shadows": true },
+  "blocking": { "engine": "BLENDER_WORKBENCH", "percent": 50, "samples": 1, "dof": false, "shadows": false }
+}

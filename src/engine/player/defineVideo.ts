@@ -8,6 +8,7 @@ import type { VoiceManifest } from "../audio/speech";
 import { resolveEpisode, type ResolvedEpisode } from "../core/timeline";
 import type { EnvironmentDef } from "../world/layout";
 import { EpisodePlayer, type VideoExtras } from "./EpisodePlayer";
+import { CompPlayer, ProbePlayer, type FactoryInput } from "../../factory/FactoryPlayer";
 
 /**
  * Pure (Node-safe) data a video adds to the engine. Keep it in `videos/<slug>/video.data.ts`
@@ -59,7 +60,12 @@ export const defineVideo = (def: VideoDefinition): VideoModule => {
   const [w, h] = FORMATS[ep.format?.preset ?? "landscape"] ?? FORMATS.landscape;
   const { episode: _e, environments: _env, actorDefs: _ad, componentKinds: _ck, screenKinds: _sk, ...extras } = def;
 
-  const component: React.FC<VideoProps> = ({ resolved }) => (resolved ? createElement(EpisodePlayer, { resolved, ...extras }) : null);
+  const component: React.FC<VideoProps> = ({ resolved }) => {
+    if (!resolved) return null;
+    // Factory modes: "probe" samples the scene for Blender, "comp" composites Blender frames (src/factory).
+    const mode = (getInputProps() as FactoryInput).mode;
+    return createElement(mode === "probe" ? ProbePlayer : mode === "comp" ? CompPlayer : EpisodePlayer, { resolved, ...extras });
+  };
 
   const calculateMetadata: CalculateMetadataFunction<VideoProps> = async ({ abortSignal }) => {
     let voice: VoiceManifest | null = null;

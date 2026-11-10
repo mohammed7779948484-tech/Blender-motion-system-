@@ -1,6 +1,6 @@
 {
-  "name": "remotion-system",
-  "version": "1.0.0",
+  "name": "video-factory",
+  "version": "0.1.0",
   "description": "Code-first studio for stylized low-poly 3D videos (Remotion + React Three Fiber)",
   "repository": {},
   "license": "UNLICENSED",
@@ -43,6 +43,7 @@
     "dev": "remotion studio",
     "test": "vitest run",
     "cli": "node --no-deprecation --import tsx scripts/cli.ts",
+    "factory": "node --no-deprecation --import tsx scripts/cli.ts",
     "catalog": "node --no-deprecation --import tsx scripts/catalog.ts",
     "typecheck": "tsc",
     "lint": "eslint src && tsc",

@@ -10,8 +10,8 @@ import { SFX_INFO } from "./sfx.data";
 export type Word = { text: string; start: number; end: number };
 export type Envelope = { rate: number; values: number[] };
 
-export type VoiceProvider = "elevenlabs" | "system" | "fixture";
-export const VOICE_PROVIDERS: VoiceProvider[] = ["elevenlabs", "system", "fixture"];
+export type VoiceProvider = "elevenlabs" | "system" | "espeak" | "fixture";
+export const VOICE_PROVIDERS: VoiceProvider[] = ["elevenlabs", "system", "espeak", "fixture"];
 
 export type VoiceLine = {
   /** Path relative to public/. */
@@ -97,6 +97,7 @@ export const hasTags = (text: string) => new RegExp(TAG_RE.source).test(text);
 export type VoiceRequest = (
   | { provider: "elevenlabs"; text: string; voiceId: string; model: string; settings: Record<string, number>; format: string }
   | { provider: "system"; text: string; voice: string; rate: number; pitch?: string }
+  | { provider: "espeak"; text: string; voice: string; speed: number; pitch: number }
   | { provider: "fixture"; text: string; speakerIndex: number }
 ) & { /** Alternative take (only present for take ≥ 1, so take-0 fingerprints never change). */ take?: number };
 
@@ -107,6 +108,12 @@ const SYSTEM_TAKE_RATE = [0, -1, 1, -2, 2];
  * Exactly what a provider will be asked to synthesise, with every default filled in. Pure. A take ≥ 1 is a
  * variant of the same line: another seed (ElevenLabs, fixture) or another speaking rate (system voices).
  */
+export const ESPEAK_VOICES = [
+  { voice: "en-us+m3", speed: 165, pitch: 38 },
+  { voice: "en-us+f3", speed: 172, pitch: 68 },
+  { voice: "en-gb+m5", speed: 160, pitch: 30 },
+];
+
 export const voiceRequest = (provider: VoiceProvider, text: string, voice: CastVoice | undefined, speakerIndex: number, take = 0): VoiceRequest => {
   const req = baseRequest(provider, text, voice, speakerIndex);
   if (take <= 0) return req;
@@ -136,6 +143,8 @@ const baseRequest = (provider: VoiceProvider, text: string, voice: CastVoice | u
   }
   // Offline voices would read "[laughs]" aloud: they get the tag-free text.
   if (provider === "system") return { provider, text: stripTags(text), voice: voice?.system ?? DEFAULT_SYSTEM_VOICES[speakerIndex % DEFAULT_SYSTEM_VOICES.length], rate: voice?.rate ?? 0, ...(voice?.pitch ? { pitch: voice.pitch } : {}) };
+  // eSpeak NG (offline, Linux/macOS/Windows): two distinguishable default voices, alternating by speaker.
+  if (provider === "espeak") return { provider, text: stripTags(text), ...ESPEAK_VOICES[speakerIndex % ESPEAK_VOICES.length] };
   return { provider, text: stripTags(text), speakerIndex };
 };
 

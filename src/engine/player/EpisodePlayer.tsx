@@ -50,7 +50,7 @@ export type EpisodeState = {
   query: SceneQuery;
 };
 
-const EpisodeContext = createContext<EpisodeState | null>(null);
+export const EpisodeContext = createContext<EpisodeState | null>(null);
 
 export const useEpisode = (): EpisodeState => {
   const s = useContext(EpisodeContext);

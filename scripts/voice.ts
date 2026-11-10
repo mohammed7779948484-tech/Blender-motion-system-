@@ -264,6 +264,44 @@ export const systemClip = (job: LineJob, tmpDir: string): Clip => {
   return { wav, words: endsFromEnergy(starts, samples, sampleRate, splitWords(job.text)) };
 };
 
+/**
+ * eSpeak NG: offline speech on any OS with `espeak-ng` on PATH (robotic, but real words with usable timing).
+ * Word starts come from the length of each spoken prefix ("Did", "Did you", "Did you run" …).
+ */
+export const hasEspeak = () => {
+  try {
+    execFileSync("espeak-ng", ["--version"], { stdio: "ignore" });
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+export const espeakClip = (job: LineJob, tmpDir: string): Clip => {
+  if (!hasEspeak()) throw new Error("espeak-ng is not installed (apt-get install espeak-ng / brew install espeak-ng), or use --provider fixture");
+  const req = voiceRequest("espeak", job.text, job.voice, job.speakerIndex, job.take ?? 0) as Extract<VoiceRequest, { provider: "espeak" }>;
+  const speed = req.speed + (job.take ?? 0) * 8;
+  const say = (text: string, tag: string) => {
+    const out = path.join(tmpDir, `espeak-${hashString(`${job.id}${text}${tag}`)}.wav`);
+    execFileSync("espeak-ng", ["-v", req.voice, "-s", String(speed), "-p", String(req.pitch), "-w", out, text]);
+    return fs.readFileSync(out);
+  };
+  const wav = say(req.text, "full");
+  const { samples, sampleRate } = readWav(wav);
+  const duration = samples.length / sampleRate;
+  const display = splitWords(job.text);
+  const spoken = splitWords(req.text);
+  let last = 0;
+  const starts = spoken.map((w, i) => {
+    if (i > 0) {
+      const prefix = readWav(say(spoken.slice(0, i).join(" ").replace(/[.,!?;:]+$/, ""), `p${i}`));
+      last = Math.min(duration - 0.05, Math.max(last + 0.06, prefix.samples.length / prefix.sampleRate));
+    }
+    return { text: w, start: last };
+  });
+  return { wav, words: endsFromEnergy(starts, samples, sampleRate, display) };
+};
+
 /** Word end = where speech energy drops before the next word (or the clip end). Uses the script's words for display text. */
 const endsFromEnergy = (starts: { text: string; start: number }[], samples: Float32Array, sampleRate: number, display: string[]): Word[] => {
   const env = envelopeFromSamples(samples, sampleRate, 100);
@@ -346,7 +384,7 @@ export type VoiceOptions = {
 };
 
 /** Offline default for this machine. */
-const localProvider = (): Provider => (process.platform === "win32" ? "system" : "fixture");
+const localProvider = (): Provider => (process.platform === "win32" ? "system" : hasEspeak() ? "espeak" : "fixture");
 
 export const parseProvider = (value: string | undefined): Provider | undefined => {
   if (value === undefined) return undefined;
@@ -443,7 +481,7 @@ export const generateVoices = async (slug: string, opts: VoiceOptions = {}) => {
       const req = voiceRequest(provider, line.text, voice, job.speakerIndex, take);
       const hash = voiceFingerprint(req);
       log(`  ${provider}: ${key} (${line.speaker}) "${line.text.slice(0, 60)}"`);
-      const clip = provider === "elevenlabs" ? await elevenLabsClip(job, apiKey, opts.fetchImpl, opts.saveResponse) : provider === "system" ? systemClip(job, tmp) : fixtureClip(job);
+      const clip = provider === "elevenlabs" ? await elevenLabsClip(job, apiKey, opts.fetchImpl, opts.saveResponse) : provider === "system" ? systemClip(job, tmp) : provider === "espeak" ? espeakClip(job, tmp) : fixtureClip(job);
       const { samples, sampleRate } = readWav(clip.wav);
       const file = `videos/${slug}/voice/${key.replace("#", "-t")}-${hash}.wav`;
       fs.writeFileSync(path.join(root, "public", file), clip.wav);
