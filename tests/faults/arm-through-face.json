@@ -1,0 +1,14 @@
+{
+  "description": "A raw joints override (the ctrl-z payoff values) blends each angle linearly, so the right arm sweeps through the head on its way to the face.",
+  "expect": { "check": "contact", "kind": "penetration", "object": "rayan.handR", "with": "rayan.head", "from": 1.0, "to": 1.6, "source": "actions[0]" },
+  "episode": {
+    "id": "fault-arm-through-face",
+    "title": "fault: arm through face",
+    "format": { "preset": "portrait" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "beside-desk", "pose": "stand_idle" } },
+    "actions": [{ "at": 1, "actor": "rayan", "joints": { "shoulderR.x": -1.993, "shoulderR.y": 0.674, "shoulderR.z": -0.01, "elbowR.x": -1.142, "elbowR.y": 0, "elbowR.z": 0, "head.x": 0.45, "torso.x": 0.2 }, "transition": 0.3 }],
+    "camera": [{ "at": 0, "shot": "medium", "subject": "rayan" }],
+    "end": 2.5
+  }
+}

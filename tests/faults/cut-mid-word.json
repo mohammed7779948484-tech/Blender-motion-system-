@@ -1,0 +1,17 @@
+{
+  "description": "A cut lands in the middle of a spoken word instead of on a word boundary or a pause.",
+  "expect": { "check": "camera", "kind": "cut-mid-word", "object": "camera", "from": 1.4, "to": 1.7, "source": "camera[1]" },
+  "episode": {
+    "id": "fault-cut-mid-word",
+    "title": "fault: cut mid-word",
+    "format": { "preset": "portrait" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_explaining" }, "claude": { "actor": "claude", "at": "desk-mascot", "scale": 1.5 } },
+    "dialogue": [{ "id": "l1", "speaker": "rayan", "text": "Tests are for people who doubt themselves." }],
+    "camera": [
+      { "at": 0, "shot": "close", "subject": "rayan" },
+      { "at": "l1.word:4+0.1", "shot": "medium", "subject": "claude" }
+    ],
+    "end": 4
+  }
+}

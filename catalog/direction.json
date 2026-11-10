@@ -1,0 +1,37 @@
+{
+  "engine": {
+    "versions": [
+      1,
+      2
+    ],
+    "note": "`engine: 2` = current behaviour (what `new` writes); omitted = 1, the original behaviour, kept exactly for older videos."
+  },
+  "profiles": {
+    "standard": {
+      "description": "Short-form defaults: something happens within 1.5 s, no stretch of more than 1.5 s without a line, action, cut or sound; notes on 3+ static shots in a row and shots under 0.6 s.",
+      "hook": 1.5,
+      "deadAir": 1.5,
+      "staticRun": 3,
+      "minShot": 0.6
+    }
+  },
+  "intents": {
+    "silence": "long pauses are deliberate (dead-air notes are accepted)",
+    "slow-open": "the opening is deliberately slow (no-hook notes are accepted)",
+    "offscreen": "a subject's face leaves the frame on purpose",
+    "back-of-head": "seeing the back of a subject is deliberate",
+    "abrupt": "a sudden jump or jitter in motion is deliberate (a snap, a glitchy character)",
+    "clipping": "a body part passing through something is deliberate",
+    "floating": "a character is off the ground on purpose (hovering, flying)",
+    "text-over-face": "a caption or on-screen text covering a face is deliberate",
+    "jump-cut": "cutting between near-identical framings is deliberate",
+    "cross-line": "crossing the line of action between two characters is deliberate",
+    "mid-word-cut": "cutting in the middle of a spoken word is deliberate",
+    "soft-focus": "focus away from the subject (or on nothing visible) is deliberate",
+    "static": "a run of static shots is deliberate",
+    "quick-cuts": "very short shots are deliberate (a rapid montage)"
+  },
+  "notes": {
+    "allow": "`allow: [intent, ...]` on the episode or a shot marks a finding as deliberate: it is reported as accepted by intent, never hidden."
+  }
+}

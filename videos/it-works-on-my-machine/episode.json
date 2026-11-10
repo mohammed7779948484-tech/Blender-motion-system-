@@ -1,0 +1,109 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "it-works-on-my-machine",
+  "title": "It Works On My Machine",
+  "format": { "preset": "landscape" },
+  "seed": "iwomm",
+  "set": {
+    "environment": "dev-office",
+    "params": {
+      "monitor-main": {
+        "screen": {
+          "preset": "code",
+          "title": "deploy.ts",
+          "speed": 26,
+          "code": "export async function deploy() {\n  await build();\n  // TODO: write tests\n  // (later)\n  // (definitely later)\n  return ship(\"production\");\n}"
+        }
+      },
+      "monitor-side": {
+        "screen": {
+          "preset": "terminal",
+          "interval": 0.7,
+          "lines": ["$ git add .", "$ git commit -m \"final final v3\"", "+ 1 file changed", "$ npm run deploy"]
+        }
+      }
+    }
+  },
+  "mood": "late-night",
+  "cast": {
+    "rayan": {
+      "actor": "rayan",
+      "at": "chair-seat",
+      "pose": "sit_typing",
+      "color": "#f59e0b",
+      "voice": { "system": "Microsoft David Desktop", "rate": 1, "elevenlabs": { "voiceId": "JBFqnCBsd6RMkjVDRZzb" } }
+    },
+    "claude": {
+      "actor": "claude",
+      "at": "desk-mascot",
+      "scale": 1.6,
+      "color": "#ff8a65",
+      "voice": { "system": "Microsoft Zira Desktop", "pitch": "+30%", "rate": 1, "elevenlabs": { "voiceId": "EXAVITQu4vr4xnSDxMaL" } }
+    }
+  },
+  "dialogue": [
+    { "id": "l1", "speaker": "rayan", "text": "Okay. Final deploy. What could possibly go wrong?", "at": 2.4 },
+    { "id": "l2", "speaker": "claude", "text": "Did you run the tests?", "gap": 0.5 },
+    { "id": "l3", "speaker": "rayan", "text": "Tests are for people who doubt themselves.", "gap": 0.45 },
+    { "id": "l4", "speaker": "claude", "text": "I doubt you.", "gap": 0.7 },
+    { "id": "l5", "speaker": "rayan", "text": "It works on my machine!", "at": "l4.end+4.4" },
+    { "id": "l6", "speaker": "claude", "text": "Want me to write the tests now?", "gap": 0.8 },
+    { "id": "l7", "speaker": "rayan", "text": "Please.", "gap": 1.1 }
+  ],
+  "actions": [
+    { "at": 0.4, "actor": "claude", "look": "rayan" },
+    { "at": "l1.start", "actor": "rayan", "emotion": "happy" },
+    { "at": "l1.end", "actor": "rayan", "gesture": "type_burst" },
+    { "at": "l2.start", "actor": "claude", "pose": "asking_question", "emotion": "curious" },
+    { "at": "l2.word:3", "actor": "rayan", "look": "claude", "pose": "sit_idle", "emotion": "neutral" },
+    { "at": "l3.start", "actor": "rayan", "pose": "sit_explaining", "emotion": "happy" },
+    { "at": "l3.word:6", "actor": "rayan", "gesture": "nod" },
+    { "at": "l4.start", "actor": "claude", "pose": "side_glance", "emotion": "skeptical" },
+    { "at": "l4.end+0.15", "actor": "rayan", "emotion": "skeptical" },
+    { "at": "l4.end+0.8", "actor": "rayan", "look": "monitor-side.screen", "pose": "sit_typing", "emotion": "neutral" },
+    { "at": "l4.end+1.1", "actor": "rayan", "gesture": "type_burst", "speed": 1.4 },
+    { "at": "l4.end+1.0", "actor": "claude", "pose": "stand_idle", "emotion": "neutral", "look": "monitor-side.screen" },
+    { "at": "l4.end+3.55", "actor": "rayan", "gesture": "double_take", "emotion": "shocked" },
+    { "at": "l4.end+3.55", "actor": "claude", "pose": "startled_back", "emotion": "shocked" },
+    { "at": "l5.start", "actor": "rayan", "look": "claude", "pose": "sit_explaining" },
+    { "at": "l5.word:3", "actor": "rayan", "gesture": "head_shake" },
+    { "at": "l6.start", "actor": "claude", "pose": "caring_lean", "emotion": "pleading", "look": "rayan" },
+    { "at": "l6.word:4", "actor": "claude", "emotion": "happy" },
+    { "at": "l6.end", "actor": "rayan", "pose": "sit_idle", "emotion": "tired" },
+    { "at": "l7.start-0.5", "actor": "rayan", "gesture": "facepalm", "speed": 0.8 },
+    { "at": "l7.end+0.5", "actor": "claude", "gesture": "hop", "emotion": "happy" },
+    { "at": "l7.end+1.3", "actor": "claude", "gesture": "wiggle" }
+  ],
+  "camera": [
+    { "at": 0, "shot": "establishing", "move": { "type": "push-in", "amount": 0.18 } },
+    { "at": "l1.start-0.15", "shot": "close", "subject": "rayan", "angle": -12, "move": { "type": "push-in", "amount": 0.08 } },
+    { "at": "l2.start-0.1", "shot": "close", "subject": "claude" },
+    { "at": "l3.start", "shot": "over-shoulder", "subject": "rayan", "over": "claude", "height": "eye" },
+    { "at": "l4.start-0.05", "shot": "close", "subject": "claude", "size": 0.9, "move": { "type": "push-in", "amount": 0.15 } },
+    { "at": "l4.end+0.6", "shot": "medium", "subject": "rayan" },
+    { "at": "l4.end+1.9", "shot": "insert", "item": "monitor-side", "anchor": "screen" },
+    { "at": "l4.end+3.5", "shot": "medium", "subject": "rayan", "move": [{ "type": "push-in", "amount": 0.2 }, { "type": "handheld", "amount": 0.02 }] },
+    { "at": "l5.start", "shot": "close", "subject": "rayan", "move": [{ "type": "push-in", "amount": 0.15 }, { "type": "handheld", "amount": 0.008 }] },
+    { "at": "l6.start-0.1", "shot": "two-shot", "subject": ["rayan", "claude"] },
+    { "at": "l7.start-0.6", "shot": "close", "subject": "rayan", "size": 1.15 },
+    { "at": "l7.end+0.35", "shot": "establishing", "spot": "high-corner", "move": { "type": "pull-out", "amount": 0.15 } }
+  ],
+  "lighting": [
+    { "at": "l4.end+3.5", "mood": "red-alert", "transition": 0.15 },
+    { "at": "l7.end+0.3", "mood": "late-night", "transition": 1.4 }
+  ],
+  "props": [
+    { "at": "l4.end+2.0", "item": "monitor-side", "set": { "screen": { "preset": "deploy", "label": "Deploying to production", "duration": 1.7, "failAt": 0.86 } } },
+    { "at": "l4.end+3.5", "item": "monitor-main", "set": { "screen": { "preset": "error", "title": "PRODUCTION DOWN", "message": "TypeError: cannot read 'tests' of undefined" } } },
+    { "at": "l7.end+0.3", "item": "monitor-main", "set": { "screen": { "preset": "code", "title": "deploy.test.ts", "speed": 40, "code": "import { deploy } from \"./deploy\";\n\ntest(\"deploys\", async () => {\n  expect(await deploy()).toBe(\"ok\");\n});" } } }
+  ],
+  "sfx": [
+    { "at": "l4.end+1.95", "sound": "mouse-click", "volume": 0.8 },
+    { "at": "l4.end+3.5", "sound": "windows-xp-error", "volume": 0.7 },
+    { "at": "l4.end+3.55", "sound": "vine-boom", "volume": 0.6 },
+    { "at": "l7.end+0.5", "sound": "ding", "volume": 0.6 }
+  ],
+  "events": [{ "at": "l7.end+0.6", "name": "title", "duration": 3.2 }],
+  "captions": { "style": "subtitle" },
+  "end": "l7.end+4.2"
+}

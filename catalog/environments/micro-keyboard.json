@@ -1,0 +1,204 @@
+{
+  "id": "micro-keyboard",
+  "description": "Giant laptop at night: 14.5×5 backlit keys (0.95 m each) with a 14 m screen behind; characters stand on key tops. Press keys with props cues or the `press` recipe.",
+  "defaultMood": "macro-warm",
+  "shell": {
+    "floor": "#8d939c",
+    "wall": "#07080d",
+    "trim": "#07080d",
+    "back": -6,
+    "left": -20,
+    "height": 12,
+    "walls": {
+      "back": false,
+      "left": false
+    }
+  },
+  "items": [
+    {
+      "id": "keyboard",
+      "kind": "giant_keyboard",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": 0
+    },
+    {
+      "id": "screen",
+      "kind": "giant_screen",
+      "position": [
+        0,
+        0.05,
+        -2.75
+      ],
+      "rotation": 0,
+      "params": {
+        "screen": {
+          "preset": "code"
+        }
+      }
+    },
+    {
+      "id": "duck",
+      "kind": "rubber_duck",
+      "position": [
+        -3.8,
+        0.42,
+        0
+      ],
+      "rotation": 25,
+      "on": "keyboard"
+    },
+    {
+      "id": "dust",
+      "kind": "dust_motes",
+      "position": [
+        0,
+        0,
+        1.2
+      ],
+      "rotation": 0
+    }
+  ],
+  "marks": {
+    "on-g": {
+      "position": [
+        -0.95,
+        0.42,
+        0
+      ],
+      "yaw": 0,
+      "description": "Key G, middle of the keyboard (standing spot)"
+    },
+    "on-h": {
+      "position": [
+        0,
+        0.42,
+        0
+      ],
+      "yaw": 0,
+      "description": "Key H, next to G"
+    },
+    "on-enter": {
+      "position": [
+        6.0562499999999995,
+        0.42,
+        0
+      ],
+      "yaw": -10,
+      "description": "Top of the ENTER key (right side)"
+    },
+    "on-ctrl": {
+      "position": [
+        -5.4624999999999995,
+        0.42,
+        1.9
+      ],
+      "yaw": 10,
+      "description": "Top of CTRL (bottom-left)"
+    },
+    "on-z": {
+      "position": [
+        -4.2749999999999995,
+        0.42,
+        0.95
+      ],
+      "yaw": 10,
+      "description": "Top of Z (left, above CTRL)"
+    },
+    "on-x": {
+      "position": [
+        -3.3249999999999997,
+        0.42,
+        0.95
+      ],
+      "yaw": 0,
+      "description": "Top of X"
+    },
+    "on-a": {
+      "position": [
+        -4.75,
+        0.42,
+        0
+      ],
+      "yaw": 0,
+      "description": "Top of A (left)"
+    },
+    "on-space": {
+      "position": [
+        -0.475,
+        0.42,
+        1.9
+      ],
+      "yaw": 0,
+      "description": "Middle of the space bar (front, closest to the viewer)"
+    },
+    "drop-enter": {
+      "position": [
+        6.0562499999999995,
+        5.42,
+        0
+      ],
+      "yaw": -10,
+      "description": "5 m above ENTER: start of a fall onto the key"
+    }
+  },
+  "cameras": {
+    "macro-low": {
+      "position": [
+        0.5,
+        0.75,
+        4.4
+      ],
+      "target": [
+        0,
+        1.3,
+        0
+      ],
+      "fov": 34,
+      "description": "Low across the key tops, screen glowing behind"
+    },
+    "overhead": {
+      "position": [
+        0,
+        9.5,
+        7
+      ],
+      "target": [
+        0,
+        0.4,
+        0.3
+      ],
+      "fov": 46,
+      "description": "High angle over the whole keyboard"
+    },
+    "wide": {
+      "position": [
+        0,
+        3.2,
+        13.5
+      ],
+      "target": [
+        0,
+        2.4,
+        -1
+      ],
+      "fov": 44,
+      "description": "Keyboard and the whole screen"
+    }
+  },
+  "bounds": {
+    "min": [
+      -15,
+      0.2,
+      -2.3
+    ],
+    "max": [
+      15,
+      12,
+      20
+    ]
+  }
+}

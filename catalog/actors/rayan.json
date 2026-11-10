@@ -1,0 +1,395 @@
+{
+  "id": "rayan",
+  "name": "Rayan",
+  "kind": "humanoid",
+  "description": "Low-poly programmer: puffy orange jacket, round glasses, neck headphones, glowing chest badge.",
+  "size": {
+    "height": 1.78,
+    "width": 0.75,
+    "depth": 0.54
+  },
+  "defaultPose": "stand_idle",
+  "defaultEmotion": "neutral",
+  "walk": {
+    "stride": 1.3,
+    "speed": 1.1
+  },
+  "poses": {
+    "stand_idle": "Relaxed standing.",
+    "explaining": "Both forearms forward, palms open; hands animate while talking.",
+    "arms_crossed": "Arms folded across the chest, leaning back slightly.",
+    "thinking": "Hand on chin, other arm supporting the elbow, head tilted.",
+    "shrug": "Shoulders up, palms out, head tilted.",
+    "celebrate": "Both arms raised overhead.",
+    "sit_idle": "Seated (place root at a chair-seat mark), hands resting on thighs.",
+    "sit_typing": "Seated, leaning in, hands on a keyboard; fingers type automatically.",
+    "sit_explaining": "Seated, turned-in torso, both forearms up explaining; hands animate while talking.",
+    "sit_arms_crossed": "Seated, leaning back with arms folded.",
+    "walk": "Walk cycle in place (a `move` cue walks automatically from any standing pose).",
+    "crouch": "Squat low with a forward lean (picking something up, putting it down). Feet stay planted."
+  },
+  "emotions": {
+    "neutral": "Calm.",
+    "happy": "Raised brows, wide smile.",
+    "skeptical": "One brow up, one eye narrowed, smirk.",
+    "shocked": "Brows high, mouth open.",
+    "angry": "V brows, narrowed eyes, frown.",
+    "tired": "Droopy lids, sad brows."
+  },
+  "gestures": {
+    "flinch": {
+      "description": "Recoils from an impact: jolts back, arms up, brows high.",
+      "duration": 0.8
+    },
+    "stomp": {
+      "description": "Small hop and a heavy landing on whatever is underfoot (lands at 45% of the gesture).",
+      "duration": 0.7
+    },
+    "wave": {
+      "description": "Right hand raised, waving.",
+      "duration": 1.6
+    },
+    "nod": {
+      "description": "Two quick nods.",
+      "duration": 0.9
+    },
+    "head_shake": {
+      "description": "Shakes head no.",
+      "duration": 1
+    },
+    "facepalm": {
+      "description": "Right palm to face, head drops.",
+      "duration": 2
+    },
+    "double_take": {
+      "description": "Glances away, snaps back with raised brows and a recoil.",
+      "duration": 1.1
+    },
+    "beat": {
+      "description": "A small emphasis accent on a word: a quick head dip and brow lift (put it on `lN.word:K`).",
+      "duration": 0.45
+    },
+    "type_burst": {
+      "description": "Frantic typing (use while seated at a keyboard).",
+      "duration": 1.5
+    }
+  },
+  "anchors": {
+    "feet": [
+      0,
+      0,
+      0.03
+    ],
+    "waist": [
+      0,
+      0.72,
+      0
+    ],
+    "chest": [
+      0,
+      1.06,
+      0.06
+    ],
+    "head": [
+      0,
+      1.5,
+      0.04
+    ],
+    "face": [
+      0,
+      1.51,
+      0.24
+    ],
+    "top": [
+      0,
+      1.77,
+      0
+    ]
+  },
+  "sockets": {
+    "handL": "Left palm (props held in the left hand)",
+    "handR": "Right palm",
+    "head": "Top of the head (hats, effects)"
+  },
+  "appearance": {
+    "jacketColor": {
+      "type": "color",
+      "default": "#f59e0b",
+      "description": "Puffy jacket"
+    },
+    "shirtColor": {
+      "type": "color",
+      "default": "#151722",
+      "description": "Inner shirt"
+    },
+    "pantsColor": {
+      "type": "color",
+      "default": "#262936",
+      "description": "Pants"
+    },
+    "skinColor": {
+      "type": "color",
+      "default": "#f1c29d",
+      "description": "Skin"
+    },
+    "hairColor": {
+      "type": "color",
+      "default": "#1e1b24",
+      "description": "Hair and brows"
+    },
+    "badgeColor": {
+      "type": "color",
+      "default": "#38bdf8",
+      "description": "Glowing chest badge"
+    },
+    "glasses": {
+      "type": "boolean",
+      "default": true,
+      "description": "Round glasses"
+    },
+    "headphones": {
+      "type": "boolean",
+      "default": true,
+      "description": "Headphones around the neck"
+    }
+  },
+  "channels": {
+    "pelvis.y": {
+      "rest": 0.72,
+      "min": 0.2,
+      "max": 1,
+      "description": "pelvis height above ground (sitting ≈ 0.44)"
+    },
+    "pelvis.x": {
+      "rest": 0,
+      "min": -0.6,
+      "max": 0.6,
+      "description": "hip tilt"
+    },
+    "torso.x": {
+      "rest": 0,
+      "min": -0.9,
+      "max": 0.9
+    },
+    "torso.y": {
+      "rest": 0,
+      "min": -0.9,
+      "max": 0.9
+    },
+    "torso.z": {
+      "rest": 0,
+      "min": -0.9,
+      "max": 0.9
+    },
+    "head.x": {
+      "rest": 0,
+      "min": -1.2,
+      "max": 1.2
+    },
+    "head.y": {
+      "rest": 0,
+      "min": -1.2,
+      "max": 1.2
+    },
+    "head.z": {
+      "rest": 0,
+      "min": -1.2,
+      "max": 1.2
+    },
+    "shoulderL.x": {
+      "rest": 0.05,
+      "min": -3.2,
+      "max": 2.8
+    },
+    "shoulderL.y": {
+      "rest": 0,
+      "min": -3.2,
+      "max": 2.8
+    },
+    "shoulderL.z": {
+      "rest": 0.14,
+      "min": -3.2,
+      "max": 2.8
+    },
+    "elbowL.x": {
+      "rest": -0.28,
+      "min": -2.7,
+      "max": 1.6
+    },
+    "elbowL.y": {
+      "rest": 0,
+      "min": -2.7,
+      "max": 1.6
+    },
+    "elbowL.z": {
+      "rest": 0,
+      "min": -2.7,
+      "max": 1.6
+    },
+    "wristL.x": {
+      "rest": 0,
+      "min": -1.4,
+      "max": 1.4
+    },
+    "wristL.y": {
+      "rest": 0,
+      "min": -1.4,
+      "max": 1.4
+    },
+    "wristL.z": {
+      "rest": 0,
+      "min": -1.4,
+      "max": 1.4
+    },
+    "shoulderR.x": {
+      "rest": 0.05,
+      "min": -3.2,
+      "max": 2.8
+    },
+    "shoulderR.y": {
+      "rest": 0,
+      "min": -3.2,
+      "max": 2.8
+    },
+    "shoulderR.z": {
+      "rest": -0.14,
+      "min": -3.2,
+      "max": 2.8
+    },
+    "elbowR.x": {
+      "rest": -0.28,
+      "min": -2.7,
+      "max": 1.6
+    },
+    "elbowR.y": {
+      "rest": 0,
+      "min": -2.7,
+      "max": 1.6
+    },
+    "elbowR.z": {
+      "rest": 0,
+      "min": -2.7,
+      "max": 1.6
+    },
+    "wristR.x": {
+      "rest": 0,
+      "min": -1.4,
+      "max": 1.4
+    },
+    "wristR.y": {
+      "rest": 0,
+      "min": -1.4,
+      "max": 1.4
+    },
+    "wristR.z": {
+      "rest": 0,
+      "min": -1.4,
+      "max": 1.4
+    },
+    "hipL.x": {
+      "rest": 0,
+      "min": -2,
+      "max": 1.2
+    },
+    "hipL.y": {
+      "rest": 0,
+      "min": -2,
+      "max": 1.2
+    },
+    "hipL.z": {
+      "rest": 0,
+      "min": -2,
+      "max": 1.2
+    },
+    "kneeL.x": {
+      "rest": 0,
+      "min": -0.1,
+      "max": 2.5
+    },
+    "hipR.x": {
+      "rest": 0,
+      "min": -2,
+      "max": 1.2
+    },
+    "hipR.y": {
+      "rest": 0,
+      "min": -2,
+      "max": 1.2
+    },
+    "hipR.z": {
+      "rest": 0,
+      "min": -2,
+      "max": 1.2
+    },
+    "kneeR.x": {
+      "rest": 0,
+      "min": -0.1,
+      "max": 2.5
+    },
+    "browL.y": {
+      "rest": 0.085,
+      "min": 0.06,
+      "max": 0.135,
+      "description": "brow height"
+    },
+    "browL.rz": {
+      "rest": 0,
+      "min": -0.5,
+      "max": 0.5,
+      "description": "brow tilt (+ = angry V)"
+    },
+    "browR.y": {
+      "rest": 0.085,
+      "min": 0.06,
+      "max": 0.135
+    },
+    "browR.rz": {
+      "rest": 0,
+      "min": -0.5,
+      "max": 0.5,
+      "description": "brow tilt (- = angry V)"
+    },
+    "lidL": {
+      "rest": 0.01,
+      "min": 0.01,
+      "max": 1,
+      "description": "upper eyelid closure"
+    },
+    "lidR": {
+      "rest": 0.01,
+      "min": 0.01,
+      "max": 1
+    },
+    "pupil.x": {
+      "rest": 0,
+      "min": -0.014,
+      "max": 0.014
+    },
+    "pupil.y": {
+      "rest": 0,
+      "min": -0.012,
+      "max": 0.012
+    },
+    "mouth.open": {
+      "rest": 0.22,
+      "min": 0.1,
+      "max": 1.6
+    },
+    "mouth.wide": {
+      "rest": 1,
+      "min": 0.6,
+      "max": 1.6
+    },
+    "mouth.smile": {
+      "rest": 0,
+      "min": -1,
+      "max": 1,
+      "description": "corner curve: + smile, - frown"
+    },
+    "blush": {
+      "rest": 0.3,
+      "min": 0,
+      "max": 1
+    }
+  }
+}

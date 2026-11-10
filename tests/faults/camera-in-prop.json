@@ -1,0 +1,13 @@
+{
+  "description": "A push-in carries an authored camera into the desk near the end of the shot.",
+  "expect": { "check": "camera", "kind": "inside-occluder", "object": "camera", "with": "desk", "from": 2.2, "to": 3.0, "source": "camera[0]" },
+  "episode": {
+    "id": "fault-camera-in-prop",
+    "title": "fault: camera inside a prop",
+    "format": { "preset": "landscape" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_typing" } },
+    "camera": [{ "at": 0, "shot": "custom", "position": [0, 0.55, 2.4], "target": [0, 0.55, 0.62], "fov": 40, "move": { "type": "push-in", "amount": 0.9 } }],
+    "end": 3
+  }
+}

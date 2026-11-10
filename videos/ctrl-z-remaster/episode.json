@@ -1,0 +1,74 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "ctrl-z-remaster",
+  "title": "Ctrl+Z — payoff (remaster)",
+  "engine": 2,
+  "defaults": { "listen": 1 },
+  "format": { "preset": "portrait" },
+  "seed": "ctrl-z",
+  "set": {
+    "environment": "micro-keyboard",
+    "move": { "duck": { "position": [-5.4625, 0.24, 1.9], "rotation": -20 } },
+    "params": {
+      "keyboard": { "backlight": 0.75, "keys": { "ctrl": true }, "highlight": ["ctrl", "z"] },
+      "screen": { "screen": { "preset": "error", "title": "UNDO FAILED", "message": "ctrl ✗    z ✓", "lines": ["undo: requires CTRL + Z held together", "hint: find something heavy"] } }
+    }
+  },
+  "mood": { "base": "macro-warm", "fill": { "color": "#7f97ff", "intensity": 0.8, "position": [-6, 4, 9] }, "hemisphere": { "sky": "#4a5cab", "ground": "#22180f", "intensity": 0.5 } },
+  "cast": {
+    "rayan": {
+      "actor": "rayan",
+      "at": [-5.032, 0.42, 1.717],
+      "yaw": -81.6,
+      "pose": "stand_idle",
+      "emotion": "angry",
+      "voice": { "system": "Microsoft David Desktop", "rate": 1, "elevenlabs": { "voiceId": "TX3LPaxmHKxFdv7VOQHJ" } }
+    },
+    "claude": {
+      "actor": "claude",
+      "at": [-6.412, 0.42, 1.9],
+      "yaw": 20,
+      "scale": 2,
+      "emotion": "pleading",
+      "voice": { "system": "Microsoft Zira Desktop", "pitch": "+30%", "rate": 1, "elevenlabs": { "voiceId": "cgSgspJ2msm6clMCkdW9" } }
+    }
+  },
+  "dialogue": [
+    { "id": "l5", "speaker": "claude", "text": "[proudly] Oh, and I redeployed it for you.", "at": 2.95 }
+  ],
+  "actions": [
+    { "at": 0, "actor": "rayan", "look": "duck", "transition": 0 },
+    { "at": 0, "actor": "claude", "look": "rayan" },
+
+    { "at": 0.6, "actor": "rayan", "look": null, "move": { "to": "on-z", "duration": 0.45 } },
+    { "at": 1.0, "actor": "rayan", "turn": 0, "transition": 0.15 },
+    { "at": 1.15, "actor": "rayan", "do": "press", "target": "keyboard.key:z", "sound": "key-slam", "volume": 0.45 },
+    { "at": 1.65, "actor": "rayan", "pose": "celebrate", "emotion": "happy", "transition": 0.45 },
+    { "at": 1.75, "actor": "claude", "gesture": "wiggle", "emotion": "happy", "look": "rayan" },
+
+    { "at": "l5.start", "actor": "claude", "pose": "proud_puff", "look": "camera" },
+    { "at": "l5.start", "actor": "rayan", "pose": "stand_idle", "emotion": "skeptical", "transition": 0.45 },
+    { "at": "l5.end+0.45", "actor": "rayan", "do": "facepalm" }
+  ],
+  "props": [
+    { "at": 1.5, "item": "keyboard", "set": { "highlight": [] } },
+    { "at": 1.5, "item": "screen", "set": { "screen": { "preset": "window", "kind": "terminal", "title": "undo — production", "lines": ["$ git revert HEAD --no-edit", "+ Undo successful", "+ production restored", "$ "], "interval": 0.25 } } },
+    { "at": "l5.word:4", "item": "screen", "set": { "screen": { "preset": "deploy", "label": "Redeploying to PRODUCTION…", "duration": 1.2 } } }
+  ],
+  "sfx": [
+    { "at": "l5.end+0.45", "sound": "scratch", "volume": 0.6 }
+  ],
+  "fx": [
+    { "type": "text", "at": 1.5, "text": "UNDO SUCCESSFUL", "style": "pop", "color": "#7ee787", "duration": 1.3, "sound": "success", "volume": 0.35 },
+    { "type": "window", "at": "l5.end+0.05", "kind": "notification", "title": "Deploy succeeded ✓", "message": "release.ts → production · Fri 23:59", "icon": "🚀", "accent": "#3fb950", "duration": 2.0, "sound": "notify", "volume": 0.45 },
+    { "type": "text", "at": "l5.end+1.3", "text": "CTRL+Z", "style": "slam", "position": [0.5, 0.25], "size": 190, "accent": "#ffd166", "emphasis": ["CTRL+Z"], "duration": 2.0, "sound": "impact-medium", "volume": 0.6 },
+    { "type": "text", "at": "l5.end+1.75", "text": "never deploy on a friday", "style": "type", "position": [0.5, 0.335], "size": 64, "duration": 1.55 }
+  ],
+  "camera": [
+    { "at": 0, "shot": "two-shot", "subject": ["rayan", "claude"], "height": "low", "size": 0.85, "allow": ["back-of-head"] },
+    { "at": "l5.start", "shot": "close", "subject": "claude" },
+    { "at": "l5.word:6.start", "shot": "close", "subject": "rayan", "angle": -15, "move": { "type": "push-in", "amount": 0.15, "at": "l5.end+0.35" } }
+  ],
+  "captions": { "style": "pop" },
+  "end": "l5.end+3.5"
+}

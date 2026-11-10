@@ -1,0 +1,131 @@
+{
+  "text": {
+    "layer": "screen",
+    "description": "Kinetic typography (pop | stagger | slam | type), auto-fit to the frame; emphasis words in the accent colour.",
+    "pickWhen": "punchlines, titles, end cards, one-word reactions (\"DEPLOYED.\")",
+    "duration": 1.4,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "text",
+      "style",
+      "position",
+      "size",
+      "color",
+      "accent",
+      "emphasis"
+    ]
+  },
+  "window": {
+    "layer": "screen",
+    "description": "Technical UI window: AI chat (typing dots, streaming), terminal, error dialog, or a notification toast.",
+    "pickWhen": "show what a character reads/types; notifications that escalate the plot; make screen text readable on phones",
+    "duration": 2.5,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "kind",
+      "title",
+      "messages",
+      "lines",
+      "message",
+      "icon",
+      "buttons",
+      "theme",
+      "accent",
+      "cps",
+      "interval",
+      "position",
+      "width"
+    ]
+  },
+  "callout": {
+    "layer": "screen",
+    "description": "Arrow + label pinned to a 3D target (item.anchor, actor[.anchor], mark or point); follows it through camera moves.",
+    "pickWhen": "point out a key, a prop or a character the viewer must notice",
+    "duration": 1.8,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "on",
+      "text",
+      "color",
+      "side"
+    ]
+  },
+  "impact": {
+    "layer": "world",
+    "description": "Seeded burst of shards, dust puff and a ground ring at a 3D point.",
+    "pickWhen": "landings, slams, something hitting something (pair with shake + a sound)",
+    "duration": 0.9,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "on",
+      "color",
+      "size",
+      "count"
+    ]
+  },
+  "shake": {
+    "layer": "camera",
+    "description": "Decaying camera shake (amount in metres).",
+    "pickWhen": "impacts, explosions, sudden panic",
+    "duration": 0.4,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "amount",
+      "frequency"
+    ]
+  },
+  "glitch": {
+    "layer": "post",
+    "description": "Chromatic-aberration glitch burst on the 3D image.",
+    "pickWhen": "errors, AI weirdness, reality breaking",
+    "duration": 0.5,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "amount"
+    ]
+  },
+  "flash": {
+    "layer": "screen",
+    "description": "Brief full-frame flash (default white) fading out.",
+    "pickWhen": "hard hits, camera-flash gags, covering a smash cut",
+    "duration": 0.25,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "color"
+    ]
+  },
+  "dip": {
+    "layer": "screen",
+    "description": "Dip to a colour and back (fully covered at the middle — put the cut there).",
+    "pickWhen": "time skips, endings, softening a big location change",
+    "duration": 0.6,
+    "params": [
+      "duration",
+      "sound",
+      "volume",
+      "allow",
+      "color"
+    ]
+  }
+}

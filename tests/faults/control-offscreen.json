@@ -1,0 +1,14 @@
+{
+  "description": "Intent control: Rayan walks out of a fixed-distance close-up on purpose (face leaves frame, back of head as he goes), marked allow on the shot.",
+  "expect": null,
+  "accepted": ["offscreen", "back-of-head"],
+  "episode": {
+    "id": "control-offscreen",
+    "title": "control: deliberate exit",
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": [1.35, 0, 0.35], "yaw": -20, "pose": "stand_idle" } },
+    "actions": [{ "at": 0.5, "actor": "rayan", "move": { "to": "door" } }],
+    "camera": [{ "at": 0, "shot": "close", "subject": "rayan", "distance": 1.4, "angle": 10, "allow": ["offscreen", "back-of-head"] }],
+    "end": 4
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "A close-up on the mascot is focused on Rayan, who is not in the frame: the visible subject is soft.",
+  "expect": { "check": "camera", "kind": "focus-off-screen", "object": "camera", "with": "rayan.face", "from": 0, "to": 2, "source": "camera[0]" },
+  "episode": {
+    "id": "fault-focus-off-screen",
+    "title": "fault: focus on someone off screen",
+    "format": { "preset": "portrait" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_typing" }, "claude": { "actor": "claude", "at": "desk-mascot", "scale": 1.5 } },
+    "camera": [{ "at": 0, "shot": "close", "subject": "claude", "focus": "rayan" }],
+    "end": 2
+  }
+}

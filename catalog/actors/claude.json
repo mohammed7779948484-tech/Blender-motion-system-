@@ -1,0 +1,230 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "kind": "creature",
+  "description": "Five-lobed orange starburst with vertical block eyes and stubby feet. Expressive through squash, tilt and eye shapes. Scale it up for standing scenes (scale 4 ≈ 1.1 m).",
+  "size": {
+    "height": 0.27,
+    "width": 0.34,
+    "depth": 0.17
+  },
+  "defaultPose": "stand_idle",
+  "defaultEmotion": "neutral",
+  "walk": {
+    "stride": 0.12,
+    "speed": 0.22
+  },
+  "poses": {
+    "stand_idle": "Neutral upright.",
+    "asking_question": "Leans in with a curious tilt.",
+    "explaining": "Slightly forward and tall.",
+    "side_glance": "Body turned a little away, side-eye.",
+    "caring_lean": "Soft sideways lean, slightly squashed.",
+    "proud_puff": "Chest out, stretched tall.",
+    "startled_back": "Recoils backwards, stretched.",
+    "celebrate": "Continuous happy jumping.",
+    "walk": "Waddle in place (a `move` cue walks automatically)."
+  },
+  "emotions": {
+    "neutral": "Calm.",
+    "curious": "One eye bigger.",
+    "skeptical": "One eye squinted.",
+    "happy": "Squinty wide eyes, slight squash.",
+    "shocked": "Huge eyes, stretched.",
+    "annoyed": "Flat angled eyes.",
+    "pleading": "Big sad tilted eyes.",
+    "tired": "Half-closed low eyes, deflated."
+  },
+  "gestures": {
+    "flinch": {
+      "description": "Startled squash backwards with huge eyes.",
+      "duration": 0.6
+    },
+    "hop": {
+      "description": "A single bouncy hop with anticipation squash.",
+      "duration": 0.7
+    },
+    "nod": {
+      "description": "Two nods.",
+      "duration": 0.8
+    },
+    "shake": {
+      "description": "Shakes no.",
+      "duration": 0.9
+    },
+    "spin": {
+      "description": "Full 360° spin.",
+      "duration": 0.9
+    },
+    "wiggle": {
+      "description": "Happy side-to-side wiggle.",
+      "duration": 1
+    },
+    "beat": {
+      "description": "A small emphasis accent on a word: a quick forward dip and squash pulse (put it on `lN.word:K`).",
+      "duration": 0.4
+    }
+  },
+  "anchors": {
+    "feet": [
+      0,
+      0,
+      0.01
+    ],
+    "waist": [
+      0,
+      0.059,
+      0
+    ],
+    "chest": [
+      0,
+      0.118,
+      0.03
+    ],
+    "head": [
+      0,
+      0.118,
+      0.04
+    ],
+    "face": [
+      0,
+      0.118,
+      0.09
+    ],
+    "top": [
+      0,
+      0.27,
+      0
+    ]
+  },
+  "sockets": {
+    "top": "Above the top lobe (hats, icons, thought bubbles)",
+    "left": "Its left side lobe (+X)",
+    "right": "Its right side lobe (-X)"
+  },
+  "appearance": {
+    "bodyColor": {
+      "type": "color",
+      "default": "#e56b3e",
+      "description": "Body"
+    },
+    "eyeColor": {
+      "type": "color",
+      "default": "#141418",
+      "description": "Eyes and feet shading"
+    }
+  },
+  "channels": {
+    "body.y": {
+      "rest": 0.118,
+      "min": 0.05,
+      "max": 0.32,
+      "description": "body centre height"
+    },
+    "body.z": {
+      "rest": 0,
+      "min": -0.1,
+      "max": 0.1
+    },
+    "body.rx": {
+      "rest": 0,
+      "min": -1.2,
+      "max": 1.2,
+      "description": "+ = lean forward"
+    },
+    "body.ry": {
+      "rest": 0,
+      "min": -7,
+      "max": 7,
+      "description": "turn (spins can exceed 2π)"
+    },
+    "body.rz": {
+      "rest": 0,
+      "min": -1.2,
+      "max": 1.2,
+      "description": "+ = tilt to its right"
+    },
+    "squash": {
+      "rest": 1,
+      "min": 0.7,
+      "max": 1.4,
+      "description": "vertical stretch (volume-preserving)"
+    },
+    "squash.emotion": {
+      "rest": 0,
+      "min": -0.2,
+      "max": 0.2,
+      "description": "emotion squash offset"
+    },
+    "footL.y": {
+      "rest": 0.022,
+      "min": 0,
+      "max": 0.12
+    },
+    "footL.z": {
+      "rest": 0.012,
+      "min": -0.08,
+      "max": 0.08
+    },
+    "footR.y": {
+      "rest": 0.022,
+      "min": 0,
+      "max": 0.12
+    },
+    "footR.z": {
+      "rest": 0.012,
+      "min": -0.08,
+      "max": 0.08
+    },
+    "eyeL.x": {
+      "rest": 0.032,
+      "min": -0.07,
+      "max": 0.07
+    },
+    "eyeL.y": {
+      "rest": 0,
+      "min": -0.025,
+      "max": 0.025
+    },
+    "eyeL.sx": {
+      "rest": 1,
+      "min": 0.4,
+      "max": 1.8
+    },
+    "eyeL.sy": {
+      "rest": 1,
+      "min": 0.04,
+      "max": 1.8
+    },
+    "eyeL.rz": {
+      "rest": 0,
+      "min": -0.7,
+      "max": 0.7
+    },
+    "eyeR.x": {
+      "rest": -0.032,
+      "min": -0.07,
+      "max": 0.07
+    },
+    "eyeR.y": {
+      "rest": 0,
+      "min": -0.025,
+      "max": 0.025
+    },
+    "eyeR.sx": {
+      "rest": 1,
+      "min": 0.4,
+      "max": 1.8
+    },
+    "eyeR.sy": {
+      "rest": 1,
+      "min": 0.04,
+      "max": 1.8
+    },
+    "eyeR.rz": {
+      "rest": 0,
+      "min": -0.7,
+      "max": 0.7
+    }
+  }
+}

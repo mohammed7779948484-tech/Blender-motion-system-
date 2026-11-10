@@ -1,0 +1,16 @@
+{
+  "description": "Two consecutive close-ups of Rayan from the same angle and distance: a jump cut.",
+  "expect": { "check": "camera", "kind": "jump-cut", "object": "camera", "from": 1.4, "to": 1.6, "source": "camera[1]" },
+  "episode": {
+    "id": "fault-jump-cut",
+    "title": "fault: jump cut",
+    "format": { "preset": "portrait" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_typing" } },
+    "camera": [
+      { "at": 0, "shot": "close", "subject": "rayan", "angle": 10 },
+      { "at": 1.5, "shot": "close", "subject": "rayan", "angle": 12 }
+    ],
+    "end": 3
+  }
+}

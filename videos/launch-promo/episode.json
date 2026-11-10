@@ -1,0 +1,113 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "launch-promo",
+  "title": "Meet Pairly",
+  "format": { "preset": "portrait" },
+  "seed": "pairly",
+  "set": { "environment": "launch-stage" },
+  "mood": {
+    "base": "soft-studio",
+    "background": "#020105",
+    "fog": { "color": "#020105", "near": 6, "far": 16 },
+    "ambient": { "color": "#3b2a6b", "intensity": 0.05 },
+    "hemisphere": { "sky": "#2a1650", "ground": "#05020a", "intensity": 0.1 },
+    "key": { "color": "#ff6ad5", "intensity": 0.15, "position": [-3, 4, 3] },
+    "fill": { "color": "#5b8cff", "intensity": 0.1, "position": [4, 2, 3] },
+    "rim": { "color": "#22d3ee", "intensity": 0.3, "position": [0, 3.5, -4] },
+    "environment": 0.05,
+    "bloom": 1.2
+  },
+  "cast": {
+    "claude": {
+      "actor": "claude",
+      "at": "podium-top",
+      "scale": 4.2,
+      "color": "#ff8a65",
+      "voice": { "system": "Microsoft Zira Desktop", "pitch": "+30%", "rate": 1, "elevenlabs": { "voiceId": "EXAVITQu4vr4xnSDxMaL", "model": "eleven_multilingual_v2" } }
+    },
+    "rayan": {
+      "actor": "rayan",
+      "at": "stage-left",
+      "pose": "stand_idle",
+      "color": "#facc15",
+      "appearance": { "jacketColor": "#7c3aed", "badgeColor": "#22d3ee" },
+      "voice": { "system": "Microsoft David Desktop", "rate": 1, "elevenlabs": { "voiceId": "JBFqnCBsd6RMkjVDRZzb" } }
+    }
+  },
+  "dialogue": [
+    { "id": "l1", "speaker": "claude", "text": "Hi! I'm Pairly, your new pair programmer.", "at": 3.3 },
+    { "id": "l2", "speaker": "claude", "text": "I write the tests. I fix the bugs. And I never steal your snacks.", "gap": 0.35 },
+    { "id": "l3", "speaker": "rayan", "text": "Wait. It actually runs the tests too?", "at": "l2.end+2.9" },
+    { "id": "l4", "speaker": "claude", "text": "Every. Single. Time.", "gap": 0.4 },
+    { "id": "l5", "speaker": "rayan", "text": "Finally!", "gap": 0.5 }
+  ],
+  "actions": [
+    { "at": 0, "actor": "claude", "emotion": "tired" },
+    { "at": 1.7, "actor": "claude", "emotion": "happy", "look": "camera", "gesture": "hop" },
+    { "at": "l1.start", "actor": "claude", "pose": "proud_puff" },
+    { "at": "l2.start", "actor": "claude", "pose": "explaining" },
+    { "at": "l2.word:4", "actor": "claude", "gesture": "nod" },
+    { "at": "l2.word:8", "actor": "claude", "gesture": "wiggle" },
+    { "at": "l2.word:13", "actor": "claude", "emotion": "skeptical", "pose": "side_glance" },
+    { "at": "l2.end+0.2", "actor": "rayan", "move": { "to": "center-left", "duration": 2.6 } },
+    { "at": "l2.end+0.4", "actor": "claude", "look": "rayan", "emotion": "curious", "pose": "stand_idle" },
+    { "at": "l2.end+1.0", "actor": "rayan", "look": "claude" },
+    { "at": "l3.start", "actor": "rayan", "emotion": "shocked", "pose": "explaining" },
+    { "at": "l4.start", "actor": "claude", "pose": "proud_puff", "emotion": "happy" },
+    { "at": "l4.word:1", "actor": "claude", "gesture": "nod", "speed": 1.6 },
+    { "at": "l4.start", "actor": "rayan", "emotion": "happy", "pose": "stand_idle" },
+    { "at": "l5.start-0.1", "actor": "rayan", "pose": "celebrate", "emotion": "happy", "look": "camera" },
+    { "at": "l5.start", "actor": "claude", "gesture": "spin" },
+    { "at": "l5.end+0.2", "actor": "claude", "pose": "celebrate", "look": "camera" },
+    { "at": "l5.end+0.2", "actor": "rayan", "look": "camera" }
+  ],
+  "camera": [
+    { "at": 0, "shot": "establishing", "spot": "hero-low", "move": { "type": "crane", "amount": 0.6 } },
+    { "at": "l1.start-0.15", "shot": "close", "subject": "claude", "height": "low", "move": { "type": "push-in", "amount": 0.12 } },
+    { "at": "l2.start", "shot": "medium", "subject": "claude", "height": "low", "move": { "type": "orbit", "amount": 30 } },
+    { "at": "l2.end+0.15", "shot": "full", "subject": "rayan", "follow": { "lag": 0.6 } },
+    { "at": "l3.start", "shot": "two-shot", "subject": ["rayan", "claude"], "move": { "type": "push-in", "amount": 0.1 } },
+    { "at": "l4.start-0.1", "shot": "close", "subject": "claude", "height": "low", "move": { "type": "push-in", "amount": 0.18 } },
+    { "at": "l5.start-0.15", "shot": "medium", "subject": "rayan", "size": 1.25, "move": { "type": "push-in", "amount": 0.1 } },
+    { "at": "l5.end+0.3", "shot": "establishing", "spot": "wide", "move": { "type": "pull-out", "amount": 0.12 } }
+  ],
+  "lighting": [
+    { "at": 0.6, "transition": 1.4, "mood": {
+      "base": "soft-studio",
+      "background": "#05020c",
+      "fog": { "color": "#05020c", "near": 8, "far": 20 },
+      "ambient": { "color": "#3b2a6b", "intensity": 0.18 },
+      "hemisphere": { "sky": "#6d3bd6", "ground": "#0a0414", "intensity": 0.45 },
+      "key": { "color": "#ffd1f2", "intensity": 1.5, "position": [-2.5, 4.5, 4] },
+      "fill": { "color": "#5b8cff", "intensity": 0.8, "position": [4, 2, 3] },
+      "rim": { "color": "#22d3ee", "intensity": 2.4, "position": [0, 3.5, -4] },
+      "environment": 0.3,
+      "exposure": 1.0,
+      "bloom": 1.25
+    } }
+  ],
+  "props": [
+    { "at": "l2.word:2", "item": "holo-left", "set": { "preset": "checks" } },
+    { "at": "l2.word:6", "item": "holo-right", "set": { "preset": "bugs" } },
+    { "at": "l4.start", "item": "holo-top", "set": { "preset": "pass" } }
+  ],
+  "sfx": [
+    { "at": 0.55, "sound": "switch", "volume": 0.9 },
+    { "at": 1.1, "sound": "whoosh", "volume": 0.7 },
+    { "at": "l2.word:4", "sound": "ding", "volume": 0.45 },
+    { "at": "l2.word:8", "sound": "ding", "volume": 0.45 },
+    { "at": "l2.word:13", "sound": "record-scratch", "volume": 0.5 },
+    { "at": "l4.start", "sound": "anime-wow", "volume": 0.5 },
+    { "at": "l5.start", "sound": "yippee", "volume": 0.55 }
+  ],
+  "events": [
+    { "at": 0.5, "name": "lights-on", "duration": 1.6 },
+    { "at": 1.2, "name": "title", "duration": 2.0 },
+    { "at": "l2.word:4", "name": "beat", "duration": 1.1, "data": { "text": "WRITES TESTS ✓", "color": "#4ade80", "tilt": -4 } },
+    { "at": "l2.word:8", "name": "beat", "duration": 1.1, "data": { "text": "FIXES BUGS ✓", "color": "#22d3ee", "tilt": 3 } },
+    { "at": "l2.word:13", "name": "beat", "duration": 1.3, "data": { "text": "SNACKS: SAFE", "color": "#facc15", "tilt": -2 } },
+    { "at": "l5.end+0.4", "name": "endcard", "duration": 3.4 }
+  ],
+  "captions": { "style": "pop", "pageSeconds": 1.1 },
+  "end": "l5.end+3.8"
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "one-take",
+  "title": "One take",
+  "engine": 2,
+  "profile": "standard",
+  "format": {
+    "preset": "portrait"
+  },
+  "set": {
+    "environment": "floating-space"
+  },
+  "cast": {
+    "rayan": {
+      "actor": "rayan",
+      "at": "stand-right",
+      "pose": "stand_idle",
+      "voice": {
+        "system": "Microsoft David Desktop"
+      }
+    },
+    "claude": {
+      "actor": "claude",
+      "at": "stand-left",
+      "scale": 4,
+      "voice": {
+        "system": "Microsoft Zira Desktop",
+        "pitch": "+30%"
+      }
+    }
+  },
+  "dialogue": [
+    { "id": "l1", "speaker": "claude", "text": "You're really crossing that?", "at": 0.3 },
+    { "id": "l2", "speaker": "rayan", "text": "It's a bridge. Bridges hold.", "at": "l1.end+0.4" },
+    { "id": "l3", "speaker": "claude", "text": "It's made of light.", "at": "l2.end+5.2" }
+  ],
+  "actions": [
+    { "at": 0, "actor": "claude", "look": "rayan" },
+    { "at": 0.2, "actor": "rayan", "look": "claude" },
+    { "at": "l2.end+0.2", "actor": "rayan", "look": null, "move": { "to": "far-spot", "face": "path" } },
+    { "at": "l3.start", "actor": "rayan", "look": "claude", "transition": 0.5 },
+    { "at": "l3.end+0.3", "actor": "rayan", "emotion": "skeptical" }
+  ],
+  "camera": [
+    { "at": 0, "shot": "two-shot", "subject": ["claude", "rayan"], "angle": 30, "move": { "type": "push-in", "amount": 0.12 } },
+    {
+      "at": "l2.end",
+      "shot": "full",
+      "subject": "rayan",
+      "blend": 1.2,
+      "follow": { "lag": 0.6, "lead": 0.3 },
+      "keys": [
+        { "at": "l2.end", "angle": 160 },
+        { "at": "l2.end+2.6", "angle": 95, "size": 1.15 },
+        { "at": "l2.end+5", "angle": 30, "size": 0.95, "height": "low" }
+      ],
+      "allow": ["back-of-head"]
+    },
+    { "at": "l3.end+0.6", "shot": "wide", "subject": ["rayan", "claude"], "move": "static", "allow": ["back-of-head"] }
+  ],
+  "end": "l3.end+2.4"
+}

@@ -1,0 +1,45 @@
+{
+  "skill_name": "make-episode",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "hey, can you make a new short for the page in this repo: rayan walks into the normal office set, sits down at his desk, grabs his coffee mug, and asks the AI to center a div — and the AI dramatically refuses to write CSS. vertical, ~20-25s, make it actually funny. use the free offline voices for now (do NOT spend elevenlabs credits). get it to where it validates clean and the stills look good — no final render needed. tell me the slug and what you made.",
+      "expected_output": "A new videos/<slug>/ with a filled BRIEF.md, an episode.json in dev-office (9:16) using sit-down and pick-up recipes, an AI chat window or text accent for the refusal, CC0 sounds, offline voices generated, validate clean (no ✖), stills contact sheet reviewed with fixes; no ElevenLabs calls.",
+      "files": [],
+      "assertions": [
+        "BRIEF.md written with hook, beats and payoff (template prompts replaced)",
+        "validate passes with no ✖ errors",
+        "hook within 1.5 s (no pacing hook warning)",
+        "no dead-air warnings",
+        "vertical 9:16 (1080×1920)",
+        "offline voices only (no ElevenLabs clips)",
+        "stills contact sheet rendered",
+        "shared engine untouched (no changes under src/engine)",
+        "uses CC0 kit sounds only (no unknown-rights meme sounds)",
+        "sits down via the sit-down recipe",
+        "grabs the mug via the pick-up recipe",
+        "AI refusal shown on screen (chat window fx, window screen preset, or text accent)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "make a quick 15-20 second vertical short where claude (the mascot) explains what 'the cloud' is, except it's literally standing on an actual cloud in the sky. give it its own little set built just for this video. offline voices only, validate and render stills, skip the final mp4. keep the shared engine untouched.",
+      "expected_output": "A new videos/<slug>/ scaffolded with --env custom: video.data.ts environment + custom components in index.tsx (a cloud set), BRIEF.md filled, episode.json with a hook in the first seconds and accents/sfx, offline voices, validate clean, stills looked at; no changes under src/engine.",
+      "files": [],
+      "assertions": [
+        "BRIEF.md written with hook, beats and payoff (template prompts replaced)",
+        "validate passes with no ✖ errors",
+        "hook within 1.5 s (no pacing hook warning)",
+        "no dead-air warnings",
+        "vertical 9:16 (1080×1920)",
+        "offline voices only (no ElevenLabs clips)",
+        "stills contact sheet rendered",
+        "shared engine untouched (no changes under src/engine)",
+        "uses CC0 kit sounds only (no unknown-rights meme sounds)",
+        "own set defined in the video folder (video.data.ts environment used by the episode)",
+        "custom set components implemented in index.tsx",
+        "uses accents or sound effects"
+      ]
+    }
+  ]
+}

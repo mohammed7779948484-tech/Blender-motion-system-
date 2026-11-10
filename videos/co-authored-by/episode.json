@@ -1,0 +1,713 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "co-authored-by",
+  "title": "Co-Authored-By",
+  "engine": 2,
+  "profile": "standard",
+  "format": {
+    "preset": "portrait"
+  },
+  "seed": "duck",
+  "defaults": {
+    "listen": 1,
+    "cameraLife": 1
+  },
+  "set": {
+    "environment": "dev-office",
+    "remove": [
+      "mug"
+    ],
+    "add": [
+      {
+        "id": "duck",
+        "kind": "rubber_duck",
+        "on": "desk",
+        "position": [
+          0.3,
+          0.76,
+          -0.22
+        ],
+        "rotation": 235,
+        "scale": 0.36,
+        "params": {
+          "color": "#ff9a1a"
+        }
+      }
+    ],
+    "params": {
+      "monitor-main": {
+        "screen": {
+          "preset": "code",
+          "title": "users.ts",
+          "lang": "typescript",
+          "speed": 0,
+          "fontSize": 30,
+          "code": "export function getActiveUsers(users) {\n  const active = users.filter(u => u.active);\n  const names = active.map(u => u.name);\n  // why is this undefined??\n}"
+        }
+      },
+      "monitor-side": {
+        "screen": {
+          "preset": "terminal",
+          "interval": 0,
+          "lines": [
+            "$ npm run dev",
+            "! TypeError: users is undefined",
+            "! TypeError: users is undefined",
+            "$ date",
+            "Tue 02:47"
+          ]
+        }
+      }
+    }
+  },
+  "mood": {
+    "base": "late-night",
+    "key": {
+      "color": "#ffa45c",
+      "intensity": 1.3,
+      "position": [
+        1.8,
+        2.6,
+        1.6
+      ]
+    },
+    "practicals": {
+      "lamp": 1.6,
+      "screens": 0.9,
+      "window": "#3c5bd6",
+      "windowIntensity": 0.9
+    }
+  },
+  "cast": {
+    "rayan": {
+      "actor": "rayan",
+      "at": "chair-seat",
+      "pose": "sit_explaining",
+      "emotion": "skeptical",
+      "listen": 0,
+      "voice": {
+        "system": "Microsoft David Desktop",
+        "elevenlabs": {
+          "voiceId": "TX3LPaxmHKxFdv7VOQHJ"
+        }
+      }
+    },
+    "claude": {
+      "actor": "claude",
+      "at": "desk-mascot",
+      "scale": 1.5,
+      "listen": 1,
+      "voice": {
+        "system": "Microsoft Zira Desktop",
+        "pitch": "+30%",
+        "elevenlabs": {
+          "voiceId": "cgSgspJ2msm6clMCkdW9"
+        }
+      }
+    }
+  },
+  "dialogue": [
+    {
+      "id": "l1",
+      "speaker": "rayan",
+      "text": "[seriously] Okay, duck. Here's the bug.",
+      "at": 0.3,
+      "take": {
+        "n": 0,
+        "by": "agent",
+        "why": "measured, not heard: flattest, most deadpan read for the hook (3.8 st range); STT-verified words"
+      }
+    },
+    {
+      "id": "l2",
+      "speaker": "claude",
+      "text": "I'm... right here.",
+      "gap": 0.35
+    },
+    {
+      "id": "l3",
+      "speaker": "rayan",
+      "text": "Shh. He's listening.",
+      "gap": 0.2
+    },
+    {
+      "id": "l4",
+      "speaker": "claude",
+      "text": "[whispers] It's a bath toy.",
+      "gap": 0.3,
+      "take": {
+        "n": 0,
+        "by": "agent",
+        "why": "measured, not heard: a true whisper (no voiced pitch, takes 0/1); louder of the two; STT-verified"
+      }
+    },
+    {
+      "id": "l5",
+      "speaker": "rayan",
+      "text": "So. I filter the users... I map the names...",
+      "gap": 0.25
+    },
+    {
+      "id": "l6",
+      "speaker": "claude",
+      "text": "[excited] Ooh! I could rewrite it in Rust?",
+      "gap": 0.1
+    },
+    {
+      "id": "l7",
+      "speaker": "rayan",
+      "text": "Shh!",
+      "gap": 0.05
+    },
+    {
+      "id": "l8",
+      "speaker": "rayan",
+      "text": "...and then I never return them.",
+      "at": "l7.end+0.7"
+    },
+    {
+      "id": "l9",
+      "speaker": "rayan",
+      "text": "[gasps] Duck. You genius.",
+      "gap": 0.75,
+      "take": {
+        "n": 0,
+        "by": "agent",
+        "why": "measured, not heard: gasp performed (energy before 'Duck.', STT tags [gasps]); loudest; take 2 rejected (STT heard 'Doc')"
+      }
+    },
+    {
+      "id": "l10",
+      "speaker": "rayan",
+      "text": "...You did nothing.",
+      "at": "l9.end+4.6"
+    },
+    {
+      "id": "l11",
+      "speaker": "claude",
+      "text": "[proudly] I was emotionally present.",
+      "gap": 0.35,
+      "take": {
+        "n": 0,
+        "by": "agent",
+        "why": "measured, not heard: steady proud read, no break before 'present'; STT-verified"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "at": 0,
+      "actor": "rayan",
+      "look": "duck",
+      "turn": 18,
+      "transition": 0
+    },
+    {
+      "at": 0,
+      "actor": "claude",
+      "look": "rayan",
+      "emotion": "neutral"
+    },
+    {
+      "at": "l2.start",
+      "actor": "claude",
+      "pose": "side_glance",
+      "emotion": "skeptical",
+      "intensity": 0.5
+    },
+    {
+      "at": "l3.start-0.1",
+      "actor": "rayan",
+      "emotion": "neutral",
+      "joints": {
+        "shoulderR.x": -0.76,
+        "shoulderR.y": 0.064,
+        "shoulderR.z": -0.767,
+        "elbowR.x": -2.068
+      },
+      "duration": 1.3,
+      "transition": 0.22
+    },
+    {
+      "at": "l4.start",
+      "actor": "claude",
+      "pose": "asking_question",
+      "emotion": "skeptical"
+    },
+    {
+      "at": "l5.start",
+      "actor": "rayan",
+      "pose": "sit_explaining",
+      "emotion": "skeptical",
+      "intensity": 0.35
+    },
+    {
+      "at": "l5.word:4",
+      "actor": "rayan",
+      "gesture": "beat"
+    },
+    {
+      "at": "l5.word:7",
+      "actor": "rayan",
+      "gesture": "beat"
+    },
+    {
+      "at": "l6.start",
+      "actor": "claude",
+      "pose": "caring_lean",
+      "emotion": "happy"
+    },
+    {
+      "at": "l7.start-0.05",
+      "actor": "rayan",
+      "joints": {
+        "shoulderR.x": -0.76,
+        "shoulderR.y": 0.064,
+        "shoulderR.z": -0.767,
+        "elbowR.x": -2.068
+      },
+      "duration": 0.9,
+      "transition": 0.12
+    },
+    {
+      "at": "l7.end+0.1",
+      "actor": "claude",
+      "pose": "stand_idle",
+      "emotion": "tired"
+    },
+    {
+      "at": "l7.end+0.3",
+      "actor": "rayan",
+      "pose": "sit_idle",
+      "emotion": "shocked",
+      "intensity": 0.5
+    },
+    {
+      "at": "l8.start",
+      "actor": "rayan",
+      "emotion": "shocked",
+      "intensity": 0.8
+    },
+    {
+      "at": "l9.start",
+      "actor": "rayan",
+      "emotion": "happy"
+    },
+    {
+      "at": "l9.word:2",
+      "actor": "claude",
+      "emotion": "annoyed"
+    },
+    {
+      "at": "l9.end+0.3",
+      "actor": "rayan",
+      "pose": "sit_typing",
+      "look": "monitor-main.screen",
+      "turn": 0,
+      "transition": 0.35
+    },
+    {
+      "at": "l9.end+0.3",
+      "actor": "rayan",
+      "gesture": "type_burst",
+      "speed": 1.5
+    },
+    {
+      "at": "l9.end+1.3",
+      "actor": "rayan",
+      "emotion": "happy",
+      "intensity": 0.6
+    },
+    {
+      "at": "l10.start-0.45",
+      "actor": "rayan",
+      "pose": "sit_idle",
+      "look": "claude",
+      "emotion": "skeptical",
+      "transition": 0.7
+    },
+    {
+      "at": "l11.start",
+      "actor": "claude",
+      "pose": "proud_puff",
+      "emotion": "happy",
+      "look": "rayan"
+    },
+    {
+      "at": "l11.end+0.2",
+      "actor": "rayan",
+      "emotion": "tired"
+    },
+    {
+      "at": "l8.end+0.02",
+      "actor": "rayan",
+      "gesture": "double_take",
+      "emotion": "shocked"
+    },
+    {
+      "at": "l11.word:3",
+      "actor": "claude",
+      "gesture": "beat"
+    },
+    {
+      "at": "l11.end+0.1",
+      "actor": "claude",
+      "look": "camera",
+      "transition": 0.25
+    },
+    {
+      "at": "l11.end+0.3",
+      "actor": "claude",
+      "gesture": "wiggle"
+    }
+  ],
+  "camera": [
+    {
+      "at": 0,
+      "shot": "custom",
+      "position": [
+        -0.224,
+        0.97,
+        0.566
+      ],
+      "target": [
+        0.3,
+        0.83,
+        0.4
+      ],
+      "fov": 34,
+      "focus": "duck",
+      "move": {
+        "type": "push-in",
+        "amount": 0.22
+      }
+    },
+    {
+      "at": "l1.word:2.end+0.05",
+      "shot": "close",
+      "subject": "rayan",
+      "offset": [
+        0,
+        0.3
+      ],
+      "move": {
+        "type": "push-in",
+        "amount": 0.08
+      },
+      "angle": -30
+    },
+    {
+      "at": "l2.start-0.1",
+      "shot": "close",
+      "subject": "claude"
+    },
+    {
+      "at": "l3.start-0.15",
+      "shot": "custom",
+      "position": [
+        -0.18,
+        1.32,
+        2.6
+      ],
+      "target": [
+        -0.14,
+        1.08,
+        0.2
+      ],
+      "fov": 34,
+      "focus": "rayan"
+    },
+    {
+      "at": "l4.start-0.1",
+      "shot": "close",
+      "subject": "claude",
+      "size": 0.9,
+      "move": {
+        "type": "push-in",
+        "amount": 0.12
+      }
+    },
+    {
+      "at": "l5.start-0.1",
+      "shot": "medium",
+      "subject": "rayan",
+      "offset": [
+        0,
+        0.04
+      ],
+      "angle": -25
+    },
+    {
+      "at": "l5.word:6",
+      "shot": "insert",
+      "item": "monitor-main",
+      "anchor": "screen"
+    },
+    {
+      "at": "l6.start-0.1",
+      "shot": "close",
+      "subject": "claude",
+      "height": "low",
+      "angle": -15
+    },
+    {
+      "at": "l7.start-0.08",
+      "shot": "medium",
+      "subject": "rayan",
+      "offset": [
+        0,
+        0.04
+      ],
+      "angle": -25
+    },
+    {
+      "at": "l7.end+0.35",
+      "shot": "close",
+      "subject": "rayan",
+      "angle": -22,
+      "offset": [
+        0,
+        0.25
+      ],
+      "move": {
+        "type": "push-in",
+        "amount": 0.22
+      }
+    },
+    {
+      "at": "l9.start-0.05",
+      "shot": "custom",
+      "position": [
+        -0.076,
+        0.86,
+        0.588
+      ],
+      "target": [
+        0.3,
+        0.86,
+        0.4
+      ],
+      "fov": 38,
+      "focus": "duck",
+      "move": {
+        "type": "push-in",
+        "amount": 0.3
+      },
+      "allow": [
+        "quick-cuts"
+      ]
+    },
+    {
+      "at": "l9.word:2",
+      "shot": "close",
+      "subject": "claude",
+      "size": 0.85,
+      "move": "static"
+    },
+    {
+      "at": "l9.end+0.25",
+      "shot": "medium",
+      "subject": "rayan",
+      "offset": [
+        0,
+        0.04
+      ],
+      "angle": -15
+    },
+    {
+      "at": "l9.end+1.05",
+      "shot": "insert",
+      "item": "monitor-main",
+      "anchor": "screen",
+      "move": {
+        "type": "push-in",
+        "amount": 0.1
+      }
+    },
+    {
+      "at": "l10.start-0.55",
+      "shot": "custom",
+      "position": [
+        -0.9,
+        1.2,
+        1.75
+      ],
+      "target": [
+        -0.12,
+        0.98,
+        0.22
+      ],
+      "fov": 38,
+      "focus": "rayan"
+    },
+    {
+      "at": "l11.start-0.1",
+      "shot": "close",
+      "subject": "claude",
+      "move": {
+        "type": "push-in",
+        "amount": 0.1
+      },
+      "size": 1.0,
+      "offset": [
+        0,
+        0.15
+      ],
+      "height": "low"
+    },
+    {
+      "at": "l11.end+0.95",
+      "shot": "custom",
+      "position": [
+        -0.224,
+        0.97,
+        0.566
+      ],
+      "target": [
+        0.3,
+        0.84,
+        0.355
+      ],
+      "fov": 34,
+      "focus": "duck",
+      "move": "static"
+    }
+  ],
+  "props": [
+    {
+      "at": "l9.end+0.4",
+      "item": "monitor-main",
+      "set": {
+        "screen": {
+          "preset": "code",
+          "title": "users.ts",
+          "lang": "typescript",
+          "speed": 40,
+          "fontSize": 30,
+          "code": "export function getActiveUsers(users) {\n  const active = users.filter(u => u.active);\n  const names = active.map(u => u.name);\n  return names;\n}"
+        }
+      }
+    }
+  ],
+  "fx": [
+    {
+      "type": "window",
+      "at": "l9.end+1.2",
+      "kind": "terminal",
+      "title": "zsh \u2014 ~/app",
+      "position": [
+        0.5,
+        0.33
+      ],
+      "cps": 40,
+      "interval": 0.35,
+      "duration": 2.8,
+      "lines": [
+        "$ git commit -m \"fix: return\"",
+        "[main 2f47a1c] fix: return",
+        "+ Co-Authored-By: Claude"
+      ],
+      "sound": "window-open",
+      "volume": 0.25,
+      "width": 0.92
+    },
+    {
+      "type": "text",
+      "at": "l9.end+2.65",
+      "text": "Co-Authored-By: Claude",
+      "style": "pop",
+      "position": [
+        0.5,
+        0.6
+      ],
+      "size": 92,
+      "color": "#ffffff",
+      "accent": "#7ee787",
+      "emphasis": [
+        "Claude"
+      ],
+      "duration": 1.35
+    },
+    {
+      "type": "callout",
+      "at": "l11.end+1.4",
+      "on": "duck",
+      "text": "actual co-author",
+      "side": "left",
+      "duration": 1.4,
+      "sound": "select",
+      "volume": 0.3
+    }
+  ],
+  "sfx": [
+    {
+      "at": 0,
+      "sound": "videos/co-authored-by/sfx/roomtone.mp3",
+      "volume": 0.25
+    },
+    {
+      "at": "l9.end+0.3",
+      "sound": "key-clack",
+      "volume": 0.28
+    },
+    {
+      "at": "l9.end+0.41",
+      "sound": "key-clack",
+      "volume": 0.22
+    },
+    {
+      "at": "l9.end+0.49",
+      "sound": "key-clack",
+      "volume": 0.28
+    },
+    {
+      "at": "l9.end+0.63",
+      "sound": "key-clack",
+      "volume": 0.22
+    },
+    {
+      "at": "l9.end+0.7",
+      "sound": "key-clack",
+      "volume": 0.28
+    },
+    {
+      "at": "l9.end+0.82",
+      "sound": "key-clack",
+      "volume": 0.22
+    },
+    {
+      "at": "l9.end+0.9",
+      "sound": "key-clack",
+      "volume": 0.28
+    },
+    {
+      "at": "l9.end+0.99",
+      "sound": "key-clack",
+      "volume": 0.22
+    },
+    {
+      "at": "l9.end+1.08",
+      "sound": "key-clack",
+      "volume": 0.38
+    },
+    {
+      "at": "l9.end+2.65",
+      "sound": "notify",
+      "volume": 0.45
+    },
+    {
+      "at": "l11.end+1.2",
+      "sound": "videos/co-authored-by/sfx/duck-squeak.wav",
+      "volume": 0.55
+    }
+  ],
+  "captions": {
+    "style": "pop"
+  },
+  "end": "l11.end+3.0",
+  "music": {
+    "src": "videos/co-authored-by/sfx/lofi-bed.mp3",
+    "volume": 0.15,
+    "duck": 0.5
+  }
+}

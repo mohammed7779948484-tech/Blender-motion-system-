@@ -1,0 +1,37 @@
+{
+  "shots": {
+    "establishing": "Set camera spot (environment `cameras`); `spot` picks one.",
+    "wide": "Subject(s) small in frame with lots of set around them.",
+    "full": "Head to feet.",
+    "medium": "Head to waist.",
+    "close": "Head and shoulders.",
+    "two-shot": "Two (or more) subjects together, head to waist.",
+    "over-shoulder": "Over `over` actor's shoulder onto the subject.",
+    "insert": "Detail of a set item (`item` + optional `anchor`, e.g. a monitor's \"screen\").",
+    "custom": "Explicit `position` / `target` / `fov`."
+  },
+  "moves": {
+    "static": "Locked off.",
+    "push-in": "Moves toward the aim point (amount = fraction of distance, default 0.22).",
+    "pull-out": "Moves away (amount default 0.3).",
+    "truck": "Slides sideways (amount = metres, default 0.6).",
+    "orbit": "Circles the aim point (amount = degrees, default 30).",
+    "crane": "Rises (amount = metres, default 0.6; negative descends).",
+    "handheld": "Seeded organic shake (amount = metres, default 0.012).",
+    "life": "Barely visible breathing camera: slow push + drift (amount = intensity, default 1). Opt-in."
+  },
+  "notes": {
+    "angle": "degrees around the subject from its facing (0 = frontal, + = toward its left). Authored angles are never auto-corrected.",
+    "height": "eye | low | high | metres relative to eye level",
+    "lens": "focal length in mm on the image's short side (default per shot); or `fov` (vertical degrees)",
+    "size": "framing multiplier (<1 tighter, >1 looser)",
+    "track": "aim follows the subject (camera body stays); { lag } seconds of smoothing",
+    "follow": "camera body follows the subject too; { lag }",
+    "focus": "auto | none | <actor>[.anchor] | <item>[.anchor] | [x,y,z]; rack: [{ at, to }]",
+    "dof": "auto | off | { bokeh, range }",
+    "lock": "true = no automatic corrections at all",
+    "allowOcclusion": "ids allowed to block the view (deliberate foreground)",
+    "blend": "seconds to blend from the previous shot instead of cutting",
+    "allow": "findings in this shot that are deliberate, e.g. [\"offscreen\"] (catalog/direction.json intents)"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "../../catalog/episode.schema.json",
+  "id": "ctrl-z",
+  "title": "Ctrl+Z",
+  "format": { "preset": "portrait" },
+  "seed": "ctrl-z",
+  "set": {
+    "environment": "micro-keyboard",
+    "move": { "duck": { "position": [-4.512, 0.42, 1.9] } },
+    "params": {
+      "keyboard": { "backlight": 0.75 },
+      "screen": { "screen": { "preset": "code", "title": "release.ts — friday 23:58", "code": "// friday 23:58\nexport const release = async () => {\n  await build();\n  // TODO: ask someone first\n  return deploy(\"production\");\n};", "speed": 0, "fontSize": 44 } }
+    }
+  },
+  "mood": { "base": "macro-warm", "fill": { "color": "#7f97ff", "intensity": 0.8, "position": [-6, 4, 9] }, "hemisphere": { "sky": "#4a5cab", "ground": "#22180f", "intensity": 0.5 } },
+  "cast": {
+    "rayan": {
+      "actor": "rayan",
+      "at": [6.056, 2.9, 0],
+      "pose": "celebrate",
+      "emotion": "shocked",
+      "voice": { "system": "Microsoft David Desktop", "rate": 1, "elevenlabs": { "voiceId": "TX3LPaxmHKxFdv7VOQHJ" } }
+    },
+    "claude": {
+      "actor": "claude",
+      "at": [4.75, 0.42, 0],
+      "yaw": -15,
+      "scale": 2,
+      "voice": { "system": "Microsoft Zira Desktop", "pitch": "+30%", "rate": 1, "elevenlabs": { "voiceId": "cgSgspJ2msm6clMCkdW9" } }
+    }
+  },
+  "dialogue": [
+    { "id": "l1", "speaker": "rayan", "text": "[panicked] Wait. Did I just deploy... on a Friday?", "at": 1.3 },
+    { "id": "l2", "speaker": "claude", "text": "[cheerfully] Relax! Just press Control Z.", "gap": 0.2 },
+    { "id": "l3", "speaker": "claude", "text": "[sighs] I weigh nothing. I'm literally a cloud.", "at": "l2.end+5.9" },
+    { "id": "l4", "speaker": "rayan", "text": "[determined] Duck. Now.", "gap": 0.25 },
+    { "id": "l5", "speaker": "claude", "text": "[proudly] Oh, and I redeployed it for you.", "at": "l4.end+5.5" }
+  ],
+  "actions": [
+    { "at": 0.1, "actor": "rayan", "move": { "to": "on-enter", "duration": 0.38, "ease": "in", "face": "keep" } },
+    { "at": 0.48, "actor": "rayan", "move": { "to": [6.056, 0.24, 0], "duration": 0.07, "face": "keep" } },
+    { "at": 0.48, "actor": "rayan", "do": "react" },
+    { "at": 0.5, "actor": "rayan", "pose": "stand_idle", "transition": 0.15 },
+    { "at": 0.2, "actor": "claude", "look": "rayan" },
+
+    { "at": "l1.start", "actor": "rayan", "emotion": "shocked", "look": "camera" },
+    { "at": "l1.end-0.15", "actor": "claude", "gesture": "hop" },
+    { "at": "l1.end+0.1", "actor": "rayan", "look": "claude", "emotion": "skeptical" },
+    { "at": "l2.start", "actor": "claude", "emotion": "happy", "pose": "explaining" },
+    { "at": "l2.word:3", "actor": "claude", "gesture": "nod" },
+
+    { "at": "l2.end+0.1", "actor": "rayan", "look": null, "emotion": "angry", "move": { "to": "on-z", "duration": 2.3 } },
+    { "at": "l2.end+0.2", "actor": "claude", "pose": "stand_idle", "look": null, "move": { "to": "on-ctrl", "duration": 2.5 } },
+    { "at": "l2.end+2.45", "actor": "rayan", "turn": 0, "transition": 0.2 },
+    { "at": "l2.end+2.75", "actor": "claude", "turn": 20, "transition": 0.2 },
+    { "at": "l2.end+2.75", "actor": "rayan", "do": "press", "target": "keyboard.key:z", "sound": "key-slam", "volume": 0.5 },
+    { "at": "l2.end+3.3", "actor": "claude", "do": "press", "target": "keyboard.key:ctrl", "weight": false, "sound": "pluck", "volume": 0.8, "emotion": "curious" },
+    { "at": "l2.end+3.95", "actor": "claude", "do": "press", "target": "keyboard.key:ctrl", "weight": false, "sound": "pluck", "volume": 0.8 },
+    { "at": "l2.end+4.8", "actor": "rayan", "look": "claude", "emotion": "skeptical" },
+
+    { "at": "l3.start", "actor": "claude", "emotion": "pleading", "look": "rayan" },
+    { "at": "l4.start", "actor": "rayan", "emotion": "angry", "do": "point", "target": "duck", "duration": 1.0 },
+
+    { "at": "l4.end+0.1", "actor": "rayan", "move": { "to": "on-z", "duration": 0.12, "face": "keep" } },
+    { "at": "l4.end+0.15", "actor": "claude", "look": "rayan", "move": { "to": [-6.412, 0.42, 1.9], "duration": 0.7, "face": "keep" } },
+    { "at": "l4.end+0.25", "actor": "rayan", "do": "pick-up", "item": "duck", "sound": "pop", "volume": 0.7 },
+    { "at": "l4.end+1.75", "actor": "rayan", "do": "place", "target": "keyboard.key:ctrl", "sound": "impact-soft", "volume": 0.45, "rotation": -20 },
+    { "at": "l4.end+3.15", "actor": "rayan", "look": null, "move": { "to": "on-z", "duration": 0.45 } },
+    { "at": "l4.end+3.55", "actor": "rayan", "turn": 0, "transition": 0.15 },
+    { "at": "l4.end+3.7", "actor": "rayan", "do": "press", "target": "keyboard.key:z", "sound": "key-slam", "volume": 0.45 },
+    { "at": "l4.end+4.2", "actor": "rayan", "pose": "celebrate", "emotion": "happy", "transition": 0.25 },
+    { "at": "l4.end+4.3", "actor": "claude", "gesture": "wiggle", "emotion": "happy", "look": "rayan" },
+
+    { "at": "l5.start", "actor": "claude", "pose": "proud_puff", "look": "camera" },
+    { "at": "l5.start", "actor": "rayan", "pose": "stand_idle", "look": "claude", "emotion": "skeptical", "transition": 0.3 },
+    { "at": "l5.end+0.45", "actor": "rayan", "emotion": "tired", "look": null },
+    { "at": "l5.end+0.45", "actor": "rayan", "joints": { "shoulderR.x": -1.993, "shoulderR.y": 0.674, "shoulderR.z": -0.01, "elbowR.x": -1.142, "elbowR.y": 0, "elbowR.z": 0, "head.x": 0.45, "torso.x": 0.2, "lidL": 0.85, "lidR": 0.85 }, "transition": 0.3 }
+  ],
+  "props": [
+    { "at": 0.48, "item": "keyboard", "set": { "keys": { "enter": true } } },
+    { "at": 0.5, "item": "screen", "set": { "screen": { "preset": "deploy", "label": "Deploying to PRODUCTION…", "duration": 2.2 } } },
+    { "at": "l2.end+0.1", "item": "keyboard", "set": { "keys": { "enter": false }, "highlight": ["ctrl", "z"] } },
+    { "at": "l2.end+4.72", "item": "screen", "set": { "screen": { "preset": "error", "title": "UNDO FAILED", "message": "ctrl ✗    z ✓", "lines": ["undo: requires CTRL + Z held together", "hint: find something heavy"] } } },
+    { "at": "l4.end+0.1", "item": "keyboard", "set": { "keys": { "z": false } } },
+    { "at": "l4.end+4.05", "item": "keyboard", "set": { "highlight": [] } },
+    { "at": "l4.end+4.05", "item": "screen", "set": { "screen": { "preset": "window", "kind": "terminal", "title": "undo — production", "lines": ["$ git revert HEAD --no-edit", "+ Undo successful", "+ production restored", "$ "], "interval": 0.25 } } },
+    { "at": "l5.word:4", "item": "screen", "set": { "screen": { "preset": "deploy", "label": "Redeploying to PRODUCTION…", "duration": 1.2 } } }
+  ],
+  "sfx": [
+    { "at": 0.48, "sound": "key-slam", "volume": 0.9 },
+    { "at": "l2.end+0.1", "sound": "whoosh", "volume": 0.5 },
+    { "at": "l5.end+0.45", "sound": "scratch", "volume": 0.6 }
+  ],
+  "fx": [
+    { "type": "impact", "at": 0.48, "on": "keyboard.key:enter", "size": 1.3, "sound": "impact-heavy", "volume": 0.8 },
+    { "type": "shake", "at": 0.48, "amount": 0.07, "duration": 0.45 },
+    { "type": "text", "at": 0.55, "text": "DEPLOYED.", "style": "slam", "size": 210, "duration": 0.95, "accent": "#ff6b4a" },
+    { "type": "window", "at": "l1.word:1.end+0.03", "kind": "notification", "title": "PagerDuty", "message": "🔥 production is on fire", "icon": "🚨", "accent": "#ff4d4f", "duration": 2.4, "sound": "notify", "volume": 0.45 },
+    { "type": "callout", "at": "l2.end+0.35", "on": "keyboard.key:ctrl", "text": "CTRL", "duration": 1.9, "sound": "select", "volume": 0.5 },
+    { "type": "callout", "at": "l2.end+0.55", "on": "keyboard.key:z", "text": "Z", "duration": 1.7, "color": "#7ee787" },
+    { "type": "glitch", "at": "l2.end+4.72", "duration": 0.5, "sound": "glitch", "volume": 0.6 },
+    { "type": "window", "at": "l2.end+4.77", "kind": "dialog", "title": "Undo failed", "message": "Hold CTRL + Z together", "buttons": ["OK"], "duration": 1.6, "sound": "error", "volume": 0.6 },
+    { "type": "text", "at": "l4.end+4.05", "text": "UNDO SUCCESSFUL", "style": "pop", "color": "#7ee787", "duration": 1.3, "sound": "success", "volume": 0.35 },
+    { "type": "window", "at": "l5.end+0.05", "kind": "notification", "title": "Deploy succeeded ✓", "message": "release.ts → production · Fri 23:59", "icon": "🚀", "accent": "#3fb950", "duration": 2.0, "sound": "notify", "volume": 0.45 },
+    { "type": "text", "at": "l5.end+1.3", "text": "CTRL+Z", "style": "slam", "position": [0.5, 0.25], "size": 190, "accent": "#ffd166", "emphasis": ["CTRL+Z"], "duration": 2.0, "sound": "impact-medium", "volume": 0.6 },
+    { "type": "text", "at": "l5.end+1.75", "text": "never deploy on a friday", "style": "type", "position": [0.5, 0.335], "size": 64, "duration": 1.55 }
+  ],
+  "camera": [
+    { "at": 0, "shot": "custom", "position": [7.7, 0.75, 3.1], "target": [6.05, 1.9, 0], "fov": 52 },
+    { "at": 0.95, "shot": "close", "subject": "rayan", "angle": -10 },
+    { "at": "l1.end+0.05", "shot": "medium", "subject": "claude", "angle": 15 },
+    { "at": "l2.end+0.1", "shot": "custom", "position": [-9.2, 1.7, 3.6], "target": [-1.0, 0.85, 0.4], "fov": 40 },
+    { "at": "l2.end+1.35", "shot": "full", "subject": "rayan", "follow": { "lag": 0.35 } },
+    { "at": "l2.end+2.65", "shot": "two-shot", "subject": ["rayan", "claude"], "angle": 25 },
+    { "at": "l2.end+3.15", "shot": "medium", "subject": "claude", "angle": 30 },
+    { "at": "l2.end+4.72", "shot": "custom", "position": [-3.2, 1.25, 4.6], "target": [-2.6, 3.6, -2.6], "fov": 50 },
+    { "at": "l3.start", "shot": "close", "subject": "claude", "angle": 20 },
+    { "at": "l4.start", "shot": "medium", "subject": "rayan", "angle": -70 },
+    { "at": "l4.end+0.2", "shot": "full", "subject": "rayan", "track": true, "angle": 25 },
+    { "at": "l4.end+1.75", "shot": "full", "subject": "rayan", "angle": 35 },
+    { "at": "l4.end+3.15", "shot": "two-shot", "subject": ["rayan", "claude"], "height": "low", "size": 0.85 },
+    { "at": "l5.start", "shot": "close", "subject": "claude" },
+    { "at": "l5.end+0.35", "shot": "close", "subject": "rayan", "angle": -15, "move": { "type": "push-in", "amount": 0.15 } }
+  ],
+  "captions": { "style": "pop" },
+  "end": "l5.end+3.5"
+}

@@ -1,0 +1,14 @@
+{
+  "description": "Intent control: a deliberate 3 s silence, marked allow: [\"silence\"]. Reported as accepted, never as a warning.",
+  "expect": null,
+  "accepted": ["silence"],
+  "episode": {
+    "id": "control-silence",
+    "title": "control: deliberate silence",
+    "allow": ["silence"],
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_typing" } },
+    "dialogue": [{ "id": "l1", "speaker": "rayan", "text": "Okay.", "at": 0.3 }, { "id": "l2", "speaker": "rayan", "text": "Fine.", "at": "l1.end+3" }],
+    "camera": [{ "at": 0, "shot": "close", "subject": "rayan" }]
+  }
+}

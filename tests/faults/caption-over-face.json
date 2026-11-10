@@ -1,0 +1,15 @@
+{
+  "description": "A close-up framed low (offset) puts Rayan's face in the caption block while he speaks.",
+  "expect": { "check": "overlay", "kind": "caption-over-face", "object": "rayan.face", "with": "caption", "from": 0.6, "to": 2.5, "source": "camera[0]" },
+  "episode": {
+    "id": "fault-caption-over-face",
+    "title": "fault: caption over face",
+    "format": { "preset": "portrait" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "chair-seat", "pose": "sit_explaining" } },
+    "dialogue": [{ "id": "l1", "speaker": "rayan", "text": "Tests are for people who doubt themselves." }],
+    "camera": [{ "at": 0, "shot": "close", "subject": "rayan", "offset": [0, -0.5] }],
+    "captions": { "style": "pop" },
+    "end": 3.5
+  }
+}

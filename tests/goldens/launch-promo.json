@@ -1,0 +1,38 @@
+{
+ "resolved": "f0ab15d0301c844e",
+ "sweep": {
+  "frames": 862,
+  "total": "6b2ec8daac485ec0",
+  "seconds": [
+   "6858d89bf789b1cd",
+   "5ac1ed3bb3b31291",
+   "5ae577a2bf6441fc",
+   "58c28f19e9d55c3b",
+   "dc47d5654b5d697f",
+   "a1e431e123127033",
+   "81438ea324fd207d",
+   "c0f6b529f7501173",
+   "a24a2b7fe0d88075",
+   "44b62d56be105af8",
+   "fa81209294914b38",
+   "ce6f1a94481fd936",
+   "69f81f48850f132a",
+   "f6dd955d9044d9af",
+   "de3accf52bcabdff",
+   "87d86772c722aae4",
+   "6bf25408e1859ae6",
+   "00e44a0d63c3c3f7",
+   "f0fb59db3a96d835",
+   "efce9f191c663b1f",
+   "83bceb7af542fd14",
+   "393e4dbd06377a27",
+   "561f915b3fc30d29",
+   "9e089ee06c8f7c92",
+   "9e48174ca71bf87e",
+   "834dd1e2e358f730",
+   "a8285bdb26ca9e49",
+   "7eeacc9887d52566",
+   "1308ca8401173e72"
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Rayan is placed 15 cm above the floor for the whole shot.",
+  "expect": { "check": "contact", "kind": "floating", "object": "rayan.feet", "from": 0, "to": 2, "source": "cast.rayan" },
+  "episode": {
+    "id": "fault-floating-feet",
+    "title": "fault: floating feet",
+    "format": { "preset": "landscape" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": [1.05, 0.15, 0.35], "yaw": -20, "pose": "stand_idle" } },
+    "camera": [{ "at": 0, "shot": "full", "subject": "rayan" }],
+    "end": 2
+  }
+}

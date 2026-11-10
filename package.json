@@ -1,0 +1,54 @@
+{
+  "name": "remotion-system",
+  "version": "1.0.0",
+  "description": "Code-first studio for stylized low-poly 3D videos (Remotion + React Three Fiber)",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "@react-three/postprocessing": "3.2.0",
+    "@remotion/captions": "4.0.536",
+    "@remotion/cli": "4.0.536",
+    "@remotion/layout-utils": "4.0.536",
+    "@remotion/media": "4.0.536",
+    "@remotion/noise": "4.0.536",
+    "@remotion/paths": "4.0.536",
+    "@remotion/three": "4.0.536",
+    "postprocessing": "6.39.5",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.536",
+    "shiki": "4.0.2",
+    "three": "0.186.1",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.536",
+    "@types/node": "^24.0.0",
+    "@types/react": "19.2.7",
+    "@types/three": "0.186.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "test": "vitest run",
+    "cli": "node --no-deprecation --import tsx scripts/cli.ts",
+    "catalog": "node --no-deprecation --import tsx scripts/catalog.ts",
+    "typecheck": "tsc",
+    "lint": "eslint src && tsc",
+    "upgrade": "remotion upgrade"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}

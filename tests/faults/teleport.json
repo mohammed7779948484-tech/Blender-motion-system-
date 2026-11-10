@@ -1,0 +1,14 @@
+{
+  "description": "Rayan jumps 1.2 m in 0.05 s without a cut: an unintended teleport.",
+  "expect": { "check": "motion", "kind": "teleport", "object": "rayan", "from": 0.95, "to": 1.1, "source": "actions[0]" },
+  "episode": {
+    "id": "fault-teleport",
+    "title": "fault: teleport",
+    "format": { "preset": "landscape" },
+    "set": { "environment": "dev-office" },
+    "cast": { "rayan": { "actor": "rayan", "at": "beside-desk", "pose": "stand_idle" } },
+    "actions": [{ "at": 1, "actor": "rayan", "move": { "to": [2.2, 0, 0.6], "duration": 0.05 } }],
+    "camera": [{ "at": 0, "shot": "establishing", "spot": "wide-front" }],
+    "end": 2.5
+  }
+}
